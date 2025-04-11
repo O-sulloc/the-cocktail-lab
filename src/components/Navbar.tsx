@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,15 +28,29 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0A0A0B]/80 backdrop-blur-md' : 'bg-transparent'
+        isScrolled || isMobileMenuOpen ? 'bg-[#0A0A0B]/80 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-white">
-              The Cocktail Lab
+            <Link href="/" className="flex items-center">
+              {isScrolled || isMobileMenuOpen ? (
+                <span className="text-2xl font-bold text-white">
+                  The Cocktail Lab
+                </span>
+              ) : (
+                <div className="relative h-24 w-48 mt-10">
+                  <Image
+                    src="/logo.svg"
+                    alt="The Cocktail Lab"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              )}
             </Link>
           </div>
 
@@ -125,7 +140,7 @@ const Navbar = () => {
             >
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-medium text-white backdrop-blur-3xl transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:shadow-[0_0_2rem_-0.5rem_#E2CBFF]">
-                Get a Quote Now
+                Get Started
               </span>
             </Link>
           </div>
