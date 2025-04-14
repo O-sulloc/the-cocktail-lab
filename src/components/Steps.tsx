@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const Features = () => {
-  const features = [
+const Steps = () => {
+  const steps = [
     {
       title: '1. Get a Free Quote',
       description: 'Book with The Cocktail Lab & take the first step to your perfect event.',
@@ -37,31 +37,31 @@ const Features = () => {
           </motion.h2>
         </div>
 
-        {/* Feature Cards Grid */}
+        {/* Steps Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {steps.map((step, index) => (
             <motion.div
-              key={feature.title}
+              key={step.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: (index + 2) * 0.2 }}
               className="flex flex-col bg-[#12141D] rounded-2xl overflow-hidden group h-full"
             >
-              {/* Feature Content */}
+              {/* step Content */}
               <div className="p-8 flex-1">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  {feature.title}
+                  {step.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed">
-                  {feature.description}
+                  {step.description}
                 </p>
               </div>
 
               {/* Image Section */}
               <div className="relative aspect-[16/10] w-full">
                 <Image
-                  src={feature.image}
-                  alt={feature.title}
+                  src={step.image}
+                  alt={step.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -77,4 +77,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Steps;
