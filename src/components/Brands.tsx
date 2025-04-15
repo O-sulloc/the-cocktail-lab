@@ -21,7 +21,7 @@ const Brands = () => {
   return (
     <section className="bg-[#0A0A0B] py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-2xl text-center text-white mb-16">
+        <h3 className="text-2xl text-center text-white mb-16" style={{ fontFamily: 'Caviar Dreams' }}>
           We Recently Worked With
         </h3>
 
