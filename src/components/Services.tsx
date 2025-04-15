@@ -63,7 +63,7 @@ const Services = () => {
 
                 {/* Content */}
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-emerald-600 transition-colors duration-300">
                     {service.title}
                   </h3>
                   <div className="flex items-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
@@ -72,7 +72,7 @@ const Services = () => {
                       height="24" 
                       viewBox="0 0 24 24" 
                       fill="none" 
-                      className="text-purple-400"
+                      className="text-emerald-600"
                       stroke="currentColor" 
                       strokeWidth="2"
                     >
