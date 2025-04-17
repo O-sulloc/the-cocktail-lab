@@ -209,7 +209,7 @@ const Options = () => {
                 {plan.name}
               </h3>
               
-              <div className="text-base text-white mb-8 h-[200px]">
+              <div className="text-base text-white mb-8 h-auto md:h-[200px]">
                 {plan.description}
               </div>
 
