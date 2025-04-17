@@ -5,14 +5,33 @@ import Image from 'next/image';
 
 const Brands = () => {
   const brands = [
-    { name: 'phoenix', logo: '/brand1.svg' },
-    { name: 'ankara', logo: '/brand2.svg' },
-    { name: 'leafe', logo: '/brand3.svg' },
-    { name: 'rise', logo: '/brand4.svg' },
-    { name: 'swiss', logo: '/brand5.svg' },
-    { name: 'italic', logo: '/brand6.svg' },
-    { name: 'greenish', logo: '/brand7.svg' },
-    { name: 'bristol', logo: '/brand8.svg' }
+    { name: 'phoenix', logo: '/logo/brand-1.svg' },
+    { name: 'ankara', logo: '/logo/brand-2.svg' },
+    { name: 'leafe', logo: '/logo/brand-3.svg' },
+    { name: 'rise', logo: '/logo/brand-4.svg' },
+    { name: 'swiss', logo: '/logo/brand-5.svg' },
+    { name: 'italic', logo: '/logo/brand-6.svg' },
+    { name: 'greenish', logo: '/logo/brand-7.svg' },
+    { name: 'bristol', logo: '/logo/brand-8.svg' },
+    { name: 'phoenix', logo: '/logo/brand-9.svg' },
+    { name: 'ankara', logo: '/logo/brand-10.svg' },
+    { name: 'leafe', logo: '/logo/brand-11.svg' },
+    { name: 'rise', logo: '/logo/brand-12.svg' },
+    { name: 'swiss', logo: '/logo/brand-13.svg' },
+    { name: 'italic', logo: '/logo/brand-14.png' },
+    { name: 'greenish', logo: '/logo/brand-15.png' },
+    { name: 'bristol', logo: '/logo/brand-16.png' },
+    { name: 'phoenix', logo: '/logo/brand-17.svg' },
+    { name: 'ankara', logo: '/logo/brand-18.svg' },
+    { name: 'leafe', logo: '/logo/brand-19.svg' },
+    { name: 'rise', logo: '/logo/brand-20.svg' },
+    { name: 'swiss', logo: '/logo/brand-21.svg' },
+    { name: 'italic', logo: '/logo/brand-22.svg' },
+    { name: 'greenish', logo: '/logo/brand-23.svg' },
+    { name: 'bristol', logo: '/logo/brand-24.svg' },
+    { name: 'phoenix', logo: '/logo/brand-25.svg' },
+    { name: 'ankara', logo: '/logo/brand-26.svg' },
+    
   ];
 
   // Duplicate brands for seamless loop

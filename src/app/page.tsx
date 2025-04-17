@@ -6,6 +6,7 @@ import Services from '@/components/Services';
 import Options from '@/components/Options';
 import Brands from '@/components/Brands';
 import Choose from "@/components/Choose";
+import Bars from "@/components/Bars";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <Options />
       <Choose />
+      <Bars />
       <Brands />
     </main>
   );

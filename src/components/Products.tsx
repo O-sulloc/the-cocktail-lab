@@ -47,10 +47,10 @@ const Products = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative h-[600px] w-full rounded-2xl overflow-hidden"
+            className="relative w-full h-[400px] lg:h-[450px] rounded-2xl overflow-hidden"
           >
             <Image
-              src="/cocktail-making.webp"
+              src="/cocktail-making.jpeg"
               alt="Cocktail making experience"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

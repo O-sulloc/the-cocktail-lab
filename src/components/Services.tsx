@@ -8,17 +8,17 @@ const Services = () => {
   const services = [
     {
       title: 'Private Bar Hire',
-      image: '/private-hire-cocktails-img-3.webp',
+      image: '/private-hire-cocktails-img-3.jpeg',
       href: '/services/corporate'
     },
     {
       title: 'Corporate Bar Hire',
-      image: '/corporate-bar-hire-cocktails-img-1.webp',
+      image: '/corporate-bar-hire-cocktails-img-1.jpeg',
       href: '/services/private'
     },
     {
       title: 'Exhibition cocktail Bar Hire',
-      image: '/exhibition-the-cocktail-lab-img-2-1.webp',
+      image: '/exhibition-the-cocktail-lab-img-2-1.jpeg',
       href: '/services/wedding'
     }
   ];
@@ -63,25 +63,30 @@ const Services = () => {
 
                 {/* Content */}
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-emerald-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <div className="flex items-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                    <svg 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      className="text-emerald-600"
-                      stroke="currentColor" 
-                      strokeWidth="2"
-                    >
-                      <path 
-                        d="M5 12H19M19 12L12 5M19 12L12 19" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                  <div className="flex items-center gap-2 group">
+                    <h3 className="relative text-2xl font-bold text-white group-hover:text-emerald-600 transition-colors duration-300">
+                      <span className="relative">
+                        {service.title}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+                      </span>
+                    </h3>
+                    <div className="flex items-center transform translate-x-0 group-hover:translate-x-2 transition-all duration-300">
+                      <svg 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        className="text-white group-hover:text-emerald-600 transition-colors duration-300"
+                        stroke="currentColor" 
+                        strokeWidth="2"
+                      >
+                        <path 
+                          d="M5 12H19M19 12L12 5M19 12L12 19" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </motion.div>
