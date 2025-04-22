@@ -26,7 +26,7 @@ const Products = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-gray-300 mb-8"
             >
-              Whether hosting a large corporate function, an intimate evening with friends, your wedding, or whatever the occasion might be, The Cocktail Lab will help to make it one to remember. Our flexible, bespoke services will fit in with your idea for your event. Organising a party, no matter how big or small can be stressful, here at The Cocktail Lab, our aim is to allow you to enjoy your event as much as your guests will.
+              Whether hosting a large corporate function, an intimate evening with friends, your wedding, or whatever the occasion might be, The Cocktail Lab will help to make it one to remember. Our flexible, bespoke services will fit in with your idea for your event. Organising a party, no matter how big or small can be stressful, here at The Cocktail Lab, our aim is to allow you to enjoy your event as much as your guests&apos; will.
             </motion.p>
             <motion.a
               initial={{ opacity: 0, y: 20 }}

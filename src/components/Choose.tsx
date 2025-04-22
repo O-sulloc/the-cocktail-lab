@@ -61,7 +61,7 @@ const Choose = () => {
         {/* Scrolling right section */}
         <div className="lg:w-3/5 p-6 lg:p-8">
           <div className="space-y-16 md:space-y-24 lg:space-y-32 py-16 md:py-24 lg:py-32">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <motion.article
                 key={step.number}
                 className="flex items-start gap-4 lg:gap-8 relative"
