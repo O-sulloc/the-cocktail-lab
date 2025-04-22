@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import productsContent from '../content/products.json';
 
 const Products = () => {
   return (
@@ -18,7 +19,7 @@ const Products = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl md:text-4xl font-bold text-white mb-6"
             >
-              Enhance your event and make your guests' experience the best it can be!
+              {productsContent.hero.title}
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -26,7 +27,7 @@ const Products = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-gray-300 mb-8"
             >
-              Whether hosting a large corporate function, an intimate evening with friends, your wedding, or whatever the occasion might be, The Cocktail Lab will help to make it one to remember. Our flexible, bespoke services will fit in with your idea for your event. Organising a party, no matter how big or small can be stressful, here at The Cocktail Lab, our aim is to allow you to enjoy your event as much as your guests&apos; will.
+              {productsContent.hero.description}
             </motion.p>
             <motion.a
               initial={{ opacity: 0, y: 20 }}

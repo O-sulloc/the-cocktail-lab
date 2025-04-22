@@ -3,31 +3,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import chooseContent from '../content/choose.json';
 
 const Choose = () => {
-  const steps = [
-    {
-      number: "1",
-      title: "Experience 20 years of cocktails",
-      description: "Professional & Experienced With over 20 years' experience across London's leading hotels and restaurants we provide a professional service from start to finish."
-    },
-    {
-      number: "2",
-      title: "Reliable ★★★★★ Over 205 reviews",
-      description: "Our attention to detail, bespoke service, and expertise combine to ensure we help create a smooth-running event, serving world class cocktails for you and your guests to enjoy."
-    },
-    {
-      number: "3",
-      title: "Our Promise",
-      description: "We always aim to add the wow factor. Our talented and friendly mixologists will make sure your guests are still talking about your event long after the drinks have stopped pouring."
-    },
-    {
-      number: "4",
-      title: "The Extra Touch",
-      description: "The only cocktail bar hire company in London to offer a complementary cocktail tasting session, at our specially designed bar, to help you make those all-important menu choices."
-    }
-  ];
-
   return (
     <section className="bg-[#0A0A0B] max-w-7xl mx-auto">
       <div className="flex flex-col lg:flex-row min-h-screen">
@@ -39,7 +17,7 @@ const Choose = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6" style={{ fontFamily: 'Caviar Dreams' }}>
-            Why Choose Us
+            {chooseContent.title}
           </h2>
           <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
@@ -61,7 +39,7 @@ const Choose = () => {
         {/* Scrolling right section */}
         <div className="lg:w-3/5 p-6 lg:p-8">
           <div className="space-y-16 md:space-y-24 lg:space-y-32 py-16 md:py-24 lg:py-32">
-            {steps.map((step) => (
+            {chooseContent.steps.map((step) => (
               <motion.article
                 key={step.number}
                 className="flex items-start gap-4 lg:gap-8 relative"
