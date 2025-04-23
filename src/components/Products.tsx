@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Button from './common/Button';
 import productsContent from '../content/products.json';
 
 const Products = () => {
@@ -29,18 +30,16 @@ const Products = () => {
             >
               {productsContent.hero.description}
             </motion.p>
-            <motion.a
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              href="#discover"
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600/10 text-blue-500 hover:bg-blue-600/20 transition-colors duration-200"
             >
-              Discover
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </motion.a>
+              <Button 
+                href="contact"
+                text="Get a Quote"
+              />
+            </motion.div>
           </div>
 
           {/* Right content - Photo */}

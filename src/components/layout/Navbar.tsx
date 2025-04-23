@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Button2 from '../common/Button2';
+import Button3 from '../common/Button3';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,7 +81,7 @@ const Navbar = () => {
                   <div className="flex items-center space-x-1 py-2">
                     <Link
                       href={link.href}
-                      className="relative text-gray-300 text-[15px] font-semibold group-hover:text-emerald-600 transition-colors duration-200"
+                      className="relative text-gray-300 text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
                     >
                       <span className="relative">
                         {link.name}
@@ -124,16 +126,17 @@ const Navbar = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:flex items-center">
-              <Link
-                href="/signup"
-                className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-50 transition-transform duration-300 hover:scale-105 group"
-              >
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#059669_0%,#065f46_50%,#059669_100%)]" />
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-bold text-white backdrop-blur-3xl transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:shadow-[0_0_2rem_-0.5rem_#059669]">
-                  Get a Quote Now
-                </span>
-              </Link>
+            <div className="hidden md:flex items-center space-x-4">
+              <Button2
+                text="Get a Quote Now"
+                href="contact"
+              />
+
+              {/* Copy of the button without scale effect */}
+              <Button3
+                text="Get a Quote Now"
+                href="contact"
+              />
             </div>
 
             {/* Mobile menu button */}
@@ -209,15 +212,12 @@ const Navbar = () => {
             </div>
           ))}
           <div className="pt-4">
-            <Link
-              href="/signup"
-              className="relative inline-flex w-full h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-50 transition-transform duration-300 hover:scale-105 group"
-            >
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#059669_0%,#065f46_50%,#059669_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-bold text-white backdrop-blur-3xl transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:shadow-[0_0_2rem_-0.5rem_#059669]">
-                Get a Quote Now
-              </span>
-            </Link>
+            {/* Mobile button uses w-full class to stretch across the screen width */}
+            <Button2
+              text="Get a Quote Now"
+              href="contact"
+              className="w-full"
+            />
           </div>
         </div>
       </div>
