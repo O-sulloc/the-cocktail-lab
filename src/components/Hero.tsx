@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Link from 'next/link';
 import Button from './common/Button';
 import Button2 from './common/Button2';
 
