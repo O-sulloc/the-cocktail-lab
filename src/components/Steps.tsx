@@ -23,7 +23,7 @@ const Steps = () => {
   ];
 
   return (
-    <section className="bg-[#0A0A0B] py-24">
+    <section className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title and Main Heading */}
         <div className="text-center mb-20">

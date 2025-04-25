@@ -53,7 +53,7 @@ const Navbar = () => {
               <Link href="/" className="flex items-center">
                 <div className="w-[200px] flex items-center justify-center h-20">
                   {isScrolled || isMobileMenuOpen ? (
-                    <span className="text-2xl font-bold text-[var(--text-primary)] whitespace-nowrap" style={{ fontFamily: 'Caviar Dreams' }}>
+                    <span className="text-2xl font-bold text-white whitespace-nowrap" style={{ fontFamily: 'Caviar Dreams' }}>
                       The Cocktail Lab
                     </span>
                   ) : (
@@ -177,7 +177,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden fixed w-full bg-[#0A0A0B] transition-all duration-300 z-50 ${
+        className={`md:hidden fixed w-full transition-all duration-300 z-50 ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         style={{

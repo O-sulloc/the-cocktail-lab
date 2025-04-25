@@ -7,7 +7,7 @@ import chooseContent from '../content/choose.json';
 
 const Choose = () => {
   return (
-    <section className="bg-[#0A0A0B] max-w-7xl mx-auto">
+    <section className="max-w-7xl mx-auto">
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Sticky left section */}
         <motion.aside 
