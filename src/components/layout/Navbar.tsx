@@ -51,21 +51,23 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                {isScrolled || isMobileMenuOpen ? (
-                  <span className="text-2xl font-bold text-white" style={{ fontFamily: 'Caviar Dreams' }}>
-                    The Cocktail Lab
-                  </span>
-                ) : (
-                  <div className="relative h-28 w-48 mt-10">
-                    <Image
-                      src="/logo.svg"
-                      alt="The Cocktail Lab"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                )}
+                <div className="w-[200px] flex items-center justify-center h-20">
+                  {isScrolled || isMobileMenuOpen ? (
+                    <span className="text-2xl font-bold text-[var(--text-primary)] whitespace-nowrap" style={{ fontFamily: 'Caviar Dreams' }}>
+                      The Cocktail Lab
+                    </span>
+                  ) : (
+                    <div className="relative h-28 w-48 mt-10">
+                      <Image
+                        src="/logo.svg"
+                        alt="The Cocktail Lab"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                  )}
+                </div>
               </Link>
             </div>
 
