@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button2 from '../common/Button2';
-import Button3 from '../common/Button3';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -130,12 +129,6 @@ const Navbar = () => {
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-4">
               <Button2
-                text="Get a Quote Now"
-                href="contact"
-              />
-
-              {/* Copy of the button without scale effect */}
-              <Button3
                 text="Get a Quote Now"
                 href="contact"
               />
