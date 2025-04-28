@@ -14,17 +14,13 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import reviews data
 import reviewsData from '../data/reviews.json';
-
-// Review type definition
-interface Review {
-  picture: string;
-  description: string;
-  name: string;
-}
+import { ReviewsData } from '../types/reviews';
 
 const Reviews = () => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
+  
+  const { reviews } = reviewsData as ReviewsData;
   
   return (
     <section className="w-full py-16 bg-[#0A0A0B]">
@@ -59,7 +55,7 @@ const Reviews = () => {
               swiper.navigation.update();
             }}
           >
-            {reviewsData.reviews.map((review, index) => (
+            {reviews.map((review, index) => (
               <SwiperSlide key={index} className="reviews-slide">
                 <div className="review-card">
                   <div className="flex flex-col md:flex-row">

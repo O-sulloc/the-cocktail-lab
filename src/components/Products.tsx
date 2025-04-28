@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Button from './common/Button';
 import productsContent from '../content/products.json';
+import { ProductsContent } from '../types/products';
+import { ButtonProps } from '../types/index';
 
 const Products = () => {
+  const { hero } = productsContent as ProductsContent;
+
   return (
     <section className="py-24">
       {/* Top section with main heading */}
@@ -20,7 +24,7 @@ const Products = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl md:text-4xl font-bold text-white mb-6"
             >
-              {productsContent.hero.title}
+              {hero.title}
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -28,7 +32,7 @@ const Products = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-gray-300 mb-8"
             >
-              {productsContent.hero.description}
+              {hero.description}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
