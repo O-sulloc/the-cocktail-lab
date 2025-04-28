@@ -1,3 +1,4 @@
+import Banner from "@/components/layout/Banner";
 import Navbar from "@/components/layout/Navbar";
 import Hero from '@/components/Hero';
 import Products from '@/components/Products';
@@ -11,6 +12,7 @@ import Bars from "@/components/Bars";
 export default function Home() {
   return (
     <main>
+      <Banner />
       <Navbar />
       <Hero />
       <Products />

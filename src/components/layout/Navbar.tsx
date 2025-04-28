@@ -37,13 +37,16 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           isMobileMenuOpen 
             ? 'bg-[#0A0A0B]' 
             : isScrolled 
               ? 'bg-transparent backdrop-blur-md'
               : 'bg-transparent'
         }`}
+        style={{ 
+          top: '2.5rem', // Match Banner's height (40px = 2.5rem)
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -51,21 +54,21 @@ const Navbar = () => {
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
                 <div className="w-[200px] flex items-center justify-center h-20">
-                  {isScrolled || isMobileMenuOpen ? (
+                {isScrolled || isMobileMenuOpen ? (
                     <span className="text-2xl font-bold text-white whitespace-nowrap" style={{ fontFamily: 'Caviar Dreams' }}>
-                      The Cocktail Lab
-                    </span>
-                  ) : (
-                    <div className="relative h-28 w-48 mt-10">
-                      <Image
-                        src="/logo.svg"
-                        alt="The Cocktail Lab"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
-                  )}
+                    The Cocktail Lab
+                  </span>
+                ) : (
+                  <div className="relative h-28 w-48 mt-10">
+                    <Image
+                      src="/logo.svg"
+                      alt="The Cocktail Lab"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                )}
                 </div>
               </Link>
             </div>
@@ -174,7 +177,7 @@ const Navbar = () => {
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         style={{
-          top: '5rem',
+          top: '6rem',
           height: isMobileMenuOpen ? 'auto' : 0,
           overflow: 'hidden',
           backdropFilter: 'blur(8px)',
