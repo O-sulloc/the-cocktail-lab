@@ -5,9 +5,10 @@ import Products from '@/components/Products';
 import Steps from '@/components/Steps';
 import Services from '@/components/Services';
 import Options from '@/components/Options';
-import Brands from '@/components/Brands';
 import Choose from "@/components/Choose";
+import Reviews from "@/components/Reviews";
 import Bars from "@/components/Bars";
+import Brands from '@/components/Brands';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       <Options />
       <Choose />
+      <Reviews />
       <Bars />
       <Brands />
     </main>

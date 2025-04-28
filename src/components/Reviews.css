@@ -1,0 +1,135 @@
+.reviews-container {
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px; /* Increased padding to accommodate arrows */
+}
+
+.reviews-swiper {
+  padding: 20px 0 60px !important;
+  position: relative;
+}
+
+/* Slide Styling */
+.reviews-slide {
+  width: 100%;
+  max-width: 1200px;
+  transition: opacity 0.3s ease;
+}
+
+/* Card Container */
+.review-card {
+  background: rgba(22, 22, 22, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Review Content */
+.review-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  font-weight: 600;
+  color: #9CA3AF;
+}
+
+/* Review Image */
+.review-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .review-image {
+    height: 400px;
+  }
+}
+
+/* Navigation Arrows - improved positioning */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  color: white;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  margin: 0 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white;
+  width: 24px;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .swiper-button-prev {
+    left: 5px;
+  }
+  
+  .swiper-button-next {
+    right: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews-container {
+    padding: 0 30px;
+  }
+  
+  /* Make arrows smaller on very small screens */
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 18px;
+  }
+}
