@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Reviews.css';
+import Image from 'next/image';
 
 // Import required modules
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -47,9 +48,9 @@ const Reviews = () => {
             }}
             className="reviews-swiper"
             onInit={(swiper) => {
-              // @ts-ignore
+              // @ts-expect-error - Swiper types don't properly handle dynamic navigation elements
               swiper.params.navigation.prevEl = prevRef.current;
-              // @ts-ignore
+              // @ts-expect-error - Swiper types don't properly handle dynamic navigation elements
               swiper.params.navigation.nextEl = nextRef.current;
               swiper.navigation.init();
               swiper.navigation.update();
@@ -61,9 +62,11 @@ const Reviews = () => {
                   <div className="flex flex-col md:flex-row">
                     {/* Image div - will be first on mobile (top) */}
                     <div className="review-image md:order-last md:w-1/2">
-                      <img 
+                      <Image 
                         src={review.picture} 
                         alt={`Review by ${review.name}`}
+                        width={500}
+                        height={500}
                         className="w-full h-full object-cover"
                       />
                     </div>
