@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "question": "How long does it take to set up?",
+      "answer": "Preparation usually takes 35 to 45 minutes, and our bars take less than 5 minutes to assemble. In any case, we will be there 1 hour before the start of the service."
+    },
+    {
+      "question": "What happens if I run out of pre-ordered cocktails?",
+      "answer": "Don’t worry, we always bring extra stock! Extra cocktails will be available per request and the invoice will be sent to you the next working day. All information on extra cocktails can be found in the Booking Confirmation."
+    },
+    {
+      "question": "What is the minimum booking time?",
+      "answer": "Our minimum booking time is 2 hours of service with an extra hour of set-up included in the cost. For events outside the M25, the minimum booking time is 4 hours."
+    },
+    {
+      "question": "Can I extend the service time during the event?",
+      "answer": "Absolutely! We provide our clients with flexibility for their events. Some parties can go on for longer than planned. Why stop the fun? All information on service extension can be found in the Booking Confirmation."
+    },
+    {
+      "question": "What if I need to change the TIME or DATE of the event?",
+      "answer": "We understand that sometimes things can change due to unforeseen circumstances. If you need to change your event date, it can be done 14 days before the event at NO EXTRA COST and the next date should not be more than 6 weeks away. Change of time is permitted up to 72 hours before the event."
+    },
+    {
+      "question": "Do I need a sink?",
+      "answer": "Our bars are self-sufficient, having a sink is not a requirement but can come in handy!"
+    },
+    {
+      "question": "Does the Dry Hire package come with the ice?",
+      "answer": "With Dry Hire, we supply you with a professional mixologist, a mobile bar, cocktail glasses and a shopping list. Ice is not included but can be added for £1.75 per kilo and will be delivered in insulated boxes."
+    },
+    {
+      "question": "How many drinks can I choose?",
+      "answer": "We recommend choosing 5 cocktails and 2 mocktails."
+    },
+    {
+      "question": "Do I need power supply?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "question": "Do you have a menu showing our guests what drinks are available?",
+      "answer": "Yes, a menu with the ingredients for each cocktail and mocktail will be printed and framed at the bar."
+    },
+    {
+      "question": "Would your mixologists serve the beers, wine and/or prosecco we provide?",
+      "answer": "Absolutely! Feel free to provide any drinks to the staff, they will be more than happy to serve them to your guests. If you need prosecco & wine glasses, they can be added to your quote."
+    }
+  ]
+} 

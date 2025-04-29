@@ -9,6 +9,7 @@ import Choose from "@/components/Choose";
 import Reviews from "@/components/Reviews";
 import Bars from "@/components/Bars";
 import Brands from '@/components/Brands';
+import FAQ from '@/components/FAQ';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Reviews />
       <Bars />
       <Brands />
+      <FAQ />
     </main>
   );
 }
