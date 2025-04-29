@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Button from './common/Button';
 import productsContent from '../content/products.json';
 import { ProductsContent } from '../types/products';
-import { ButtonProps } from '../types/index';
 
 const Products = () => {
   const { hero } = productsContent as ProductsContent;
