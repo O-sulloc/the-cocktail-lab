@@ -10,6 +10,7 @@ import Reviews from "@/components/Reviews";
 import Bars from "@/components/Bars";
 import Brands from '@/components/Brands';
 import FAQ from '@/components/FAQ';
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Bars />
       <Brands />
       <FAQ />
+      <Footer />
     </main>
   );
 }
