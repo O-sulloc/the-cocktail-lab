@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button2 from '../common/Button2';
+import SocialIcons from '../common/SocialIcons';
+import Button from '../common/Button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +29,7 @@ const Navbar = () => {
       dropdownItems: [
         { name: 'Private Events', href: '#private-events' },
         { name: 'Corporate Events', href: '#corporate-events' },
-        { name: 'Wedding Services', href: '#wedding-services' },
+        { name: 'Cocktail Masterclass', href: '#cocktail-masterclass' },
       ]
     },
     { name: 'Testimonial', href: '#testimonial' },
@@ -129,7 +131,12 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* Social Media Icons - Desktop Only */}
+            <div className="hidden md:flex items-center">
+              <SocialIcons />
+            </div>
+
+            {/* CTA Button - Desktop */}
             <div className="hidden md:flex items-center space-x-4">
               <Button2
                 text="Get a Quote Now"
@@ -185,7 +192,8 @@ const Navbar = () => {
           backgroundColor: 'rgba(10, 10, 11, 0.95)'
         }}
       >
-        <div className="px-2 pt-6 pb-3 space-y-1">
+        <div className="px-2 pt-6 pb-3 space-y-4">
+          {/* Navigation Links */}
           {navLinks.map((link) => (
             <div key={link.name}>
               <Link
@@ -195,12 +203,12 @@ const Navbar = () => {
                 {link.name}
               </Link>
               {link.dropdownItems && (
-                <div className="pl-4">
+                <div className="pl-4 mt-1 space-y-1">
                   {link.dropdownItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-md"
+                      className="block px-3 py-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-md"
                     >
                       {item.name}
                     </Link>
@@ -209,12 +217,21 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <div className="pt-4">
-            {/* Mobile button uses w-full class to stretch across the screen width */}
+
+          {/* Social Icons - Mobile */}
+          <div className="py-4 border-t border-gray-800">
+            <SocialIcons 
+              className="flex justify-center space-x-6"
+              iconClassName="w-5 h-5"
+            />
+          </div>
+
+          {/* CTA Button - Mobile */}
+          <div className="pt-2">
             <Button2
               text="Get a Quote Now"
               href="contact"
-              className="w-full"
+              className='w-full'
             />
           </div>
         </div>

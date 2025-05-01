@@ -1,12 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn,
-  FaInstagramSquare, FaFacebookSquare, FaTwitterSquare, FaLinkedin
-} from 'react-icons/fa';
+import SocialIcons from '../common/SocialIcons';
 
 // Navigation links (matching Navbar)
 const navLinks = [
@@ -24,36 +20,7 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-const socialLinks = [
-  { 
-    name: 'Instagram',
-    href: 'https://www.instagram.com/the_cocktail_lab/',
-    OutlinedIcon: FaInstagram,
-    FilledIcon: FaInstagramSquare
-  },
-  { 
-    name: 'Facebook',
-    href: 'https://www.facebook.com/TheMixologistLab/',
-    OutlinedIcon: FaFacebookF,
-    FilledIcon: FaFacebookSquare
-  },
-  { 
-    name: 'Twitter',
-    href: 'https://x.com/TheCocktailLab1',
-    OutlinedIcon: FaTwitter,
-    FilledIcon: FaTwitterSquare
-  },
-  { 
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/the-cocktail-lab-tml/posts/?feedView=all',
-    OutlinedIcon: FaLinkedinIn,
-    FilledIcon: FaLinkedin
-  }
-];
-
 const Footer = () => {
-  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
-
   return (
     <footer className="bg-[#0A0A0B] text-gray-300">
       {/* Top Section */}
@@ -75,23 +42,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex space-x-6">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.name}
-                href={social.href}
-                className="text-gray-400 hover:text-emerald-600 transition-colors duration-200"
-                onMouseEnter={() => setHoveredIcon(social.name)}
-                onMouseLeave={() => setHoveredIcon(null)}
-              >
-                {hoveredIcon === social.name ? (
-                  <social.FilledIcon className="w-6 h-6" />
-                ) : (
-                  <social.OutlinedIcon className="w-6 h-6" />
-                )}
-              </Link>
-            ))}
-          </div>
+          <SocialIcons />
 
           {/* Hygiene Certificate */}
           <div className="w-[200px]">
