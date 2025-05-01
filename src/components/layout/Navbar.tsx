@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button2 from '../common/Button2';
 import SocialIcons from '../common/SocialIcons';
-import Button from '../common/Button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
