@@ -1,6 +1,7 @@
 import Banner from "@/components/layout/Banner";
 import Navbar from "@/components/layout/Navbar";
 import Hero from '@/components/Hero';
+import Awards from "@/components/Awards";
 import Products from '@/components/Products';
 import Steps from '@/components/Steps';
 import Services from '@/components/Services';
@@ -18,6 +19,7 @@ export default function Home() {
       <Banner />
       <Navbar />
       <Hero />
+      <Awards />
       <Products />
       <Steps />
       <Services />
