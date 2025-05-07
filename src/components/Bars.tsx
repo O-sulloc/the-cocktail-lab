@@ -3,67 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import barsContent from '@/content/bars.json';
+
+const { bars } = barsContent;
 
 const Bars = () => {
-  const bars = [
-    { 
-      id: 1, 
-      name: "Barcycle",
-      image: '/bar-1.webp', 
-      alt: 'Luxury Bar Setup 1', 
-      link: '/bars/luxury-bar-1' 
-    },
-    { 
-      id: 2, 
-      name: "Italian Marble",
-      image: '/bar-2.webp', 
-      alt: 'Luxury Bar Setup 2', 
-      link: '/bars/luxury-bar-2' 
-    },
-    { 
-      id: 3, 
-      name: "LED Bar",
-      image: '/bar-3.webp', 
-      alt: 'Luxury Bar Setup 3', 
-      link: '/bars/luxury-bar-3' 
-    },
-    { 
-      id: 4, 
-      name: "Classic Wood",
-      image: '/bar-4.webp', 
-      alt: 'Luxury Bar Setup 4', 
-      link: '/bars/luxury-bar-4' 
-    },
-    { 
-      id: 5, 
-      name: "Modern Glass",
-      image: '/bar-5.webp', 
-      alt: 'Luxury Bar Setup 5', 
-      link: '/bars/luxury-bar-5' 
-    },
-    { 
-      id: 6, 
-      name: "Rustic Oak",
-      image: '/bar-6.webp', 
-      alt: 'Luxury Bar Setup 6', 
-      link: '/bars/luxury-bar-6' 
-    },
-    { 
-      id: 7, 
-      name: "Rustic Oak",
-      image: '/bar-7.webp', 
-      alt: 'Luxury Bar Setup 7', 
-      link: '/bars/luxury-bar-7' 
-    },
-    { 
-      id: 8, 
-      name: "Rustic Oak",
-      image: '/bar-8.webp', 
-      alt: 'Luxury Bar Setup 8', 
-      link: '/bars/luxury-bar-8' 
-    },
-  ];
-
   const containerRef = useRef<HTMLDivElement>(null);
   const [isSetup, setIsSetup] = useState(false);
   const [isPaused, setIsPaused] = useState(false);

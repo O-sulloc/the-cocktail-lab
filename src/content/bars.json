@@ -1,0 +1,76 @@
+{
+  "bars": [
+    { 
+      "id": 1, 
+      "name": "Barcycle",
+      "inventory": 1,
+      "info": true,
+      "image": "/bar-1.webp", 
+      "alt": "Luxury Bar Setup 1", 
+      "link": "/bars/luxury-bar-1"
+    },
+    { 
+      "id": 2, 
+      "name": "Boutique",
+      "inventory": 2,
+      "info": false,
+      "image": "/bar-2.webp", 
+      "alt": "Boutique", 
+      "link": "/bars/luxury-bar-2"
+    },
+    { 
+      "id": 3, 
+      "name": "Elegant Marble",
+      "inventory": 4,
+      "info": false,
+      "image": "/bar-3.webp", 
+      "alt": "Elegant Marble", 
+      "link": "/bars/luxury-bar-3"
+    },
+    { 
+      "id": 4, 
+      "name": "Pastel Rustic",
+      "inventory": 1,
+      "info": false,
+      "image": "/bar-4.webp", 
+      "alt": "Pastel Rustic", 
+      "link": "/bars/luxury-bar-4"
+    },
+    { 
+      "id": 5, 
+      "name": "Italian Marble",
+      "inventory": 1,
+      "info": false,
+      "image": "/bar-5.webp", 
+      "alt": "Italian Marble", 
+      "link": "/bars/luxury-bar-5"
+    },
+    { 
+      "id": 6, 
+      "name": "Multicolour LED White",
+      "inventory": 4,
+      "info": false,
+      "image": "/bar-6.webp", 
+      "alt": "Luxury Bar Setup 6", 
+      "link": "/bars/luxury-bar-6"
+    },
+    { 
+      "id": 7, 
+      "name": "Rustic LED 2M",
+      "inventory": 1,
+      "info": true,
+      "image": "/bar-7.webp", 
+      "alt": "Luxury Bar Setup 7", 
+      "link": "/bars/luxury-bar-7"
+    },
+    { 
+      "id": 8, 
+      "name": "Rustic LED",
+      "inventory": 4,
+      "info": false,
+      "image": "/bar-8.webp", 
+      "alt": "Rustic LED", 
+      "link": "/bars/luxury-bar-8"
+    }
+  ]
+} 
