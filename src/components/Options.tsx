@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import InfoIcon from '@/components/common/Tooltip/InfoIcon';
 
 const Options = () => {
   // State to track which tooltip is currently active (for mobile)
@@ -215,59 +216,20 @@ const Options = () => {
 
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature) => (
-                  <div key={getTooltipId(plan.name, feature)} className="flex items-center text-white text-base group">
+                  <div key={getTooltipId(plan.name, feature)} className="flex items-center text-white text-base">
                     <div className="mr-4 flex-shrink-0">
                       {getIconForFeature(feature)}
                     </div>
                     <span>{feature}</span>
                     {/* Info icon with tooltip */}
-                    <div className="relative ml-2">
-                      <div 
-                        className="cursor-help info-icon"
-                        onClick={(e) => {
-                          // Prevent click event from bubbling up
-                          e.stopPropagation();
-                          // Only handle click for touch devices
-                          if (!isHoverDevice()) {
-                            const tooltipId = getTooltipId(plan.name, feature);
-                            if (activeTooltip === tooltipId) {
-                              setActiveTooltip(null);
-                            } else {
-                              setActiveTooltip(tooltipId);
-                            }
-                          }
-                        }}
-                      >
-                        <svg className="w-6 h-6 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <circle cx="12" cy="12" r="9" strokeWidth="1"/>
-                          <path 
-                            d="M12 16v-4m0-4h.01" 
-                            strokeWidth="2" 
-                            strokeLinecap="round"
-                            className="text-white"
-                          />
-                        </svg>
-                      </div>
-                      {/* Tooltip container - position always on top */}
-                      <div className={`absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2
-                        ${isHoverDevice() 
-                          ? 'invisible group-hover:visible' 
-                          : activeTooltip === getTooltipId(plan.name, feature) ? 'visible' : 'invisible'
-                        }`}
-                      >
-                        <div className="relative flex items-center">
-                          {/* Tooltip arrow - always points down */}
-                          <div className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 
-                            w-0 h-0 border-transparent
-                            border-t-[8px] border-t-[#374151] 
-                            border-x-[8px] border-b-0"
-                          />
-                          {/* Tooltip content */}
-                          <div className="bg-[#374151] text-white text-sm rounded-lg py-2 px-4 w-64 shadow-lg">
-                            {getFeatureInfo(feature)}
-                          </div>
-                        </div>
-                      </div>
+                    <div className="relative ml-2 group">
+                      <InfoIcon
+                        id={getTooltipId(plan.name, feature)}
+                        isHoverDevice={isHoverDevice}
+                        activeTooltip={activeTooltip}
+                        setActiveTooltip={setActiveTooltip}
+                        message={getFeatureInfo(feature)}
+                      />
                     </div>
                   </div>
                 ))}
