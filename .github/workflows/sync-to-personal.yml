@@ -1,0 +1,24 @@
+name: Sync to Personal Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Git Config
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "[email protected]"
+
+      - name: Mirror Push to Personal Repo
+        run: |
+          git remote add mirror https://x-access-token:${{ secrets.PERSONAL_REPO_PAT }}@github.com/O-sulloc/thecocktaillab.git
+          git push mirror main --force
