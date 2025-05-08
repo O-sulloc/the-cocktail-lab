@@ -24,11 +24,10 @@ const Navbar = () => {
     { name: 'About Us', href: '#about' },
     { 
       name: 'Services', 
-      href: '#services',
       dropdownItems: [
-        { name: 'Private Events', href: '#private-events' },
-        { name: 'Corporate Events', href: '#corporate-events' },
-        { name: 'Cocktail Masterclass', href: '#cocktail-masterclass' },
+        { name: 'Explore Bars', href: '/bars' },
+        { name: 'Bar Hire', href: '/hire' },
+        { name: 'Masterclass', href: '/masterclass' },
       ]
     },
     { name: 'Testimonial', href: '#testimonial' },
@@ -84,15 +83,24 @@ const Navbar = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <div className="flex items-center space-x-1 py-2">
-                    <Link
-                      href={link.href}
-                      className="relative text-gray-300 text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
-                    >
-                      <span className="relative">
-                        {link.name}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
+                    {link.href ? (
+                      <Link
+                        href={link.href}
+                        className="relative text-gray-300 text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
+                      >
+                        <span className="relative">
+                          {link.name}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
+                        </span>
+                      </Link>
+                    ) : (
+                      <span className="relative text-gray-300 text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200 cursor-pointer">
+                        <span className="relative">
+                          {link.name}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
+                        </span>
                       </span>
-                    </Link>
+                    )}
                     {link.dropdownItems && (
                       <svg
                         className={`w-4 h-4 transition-all duration-200 text-gray-300 group-hover:text-emerald-600 ${
@@ -195,12 +203,18 @@ const Navbar = () => {
           {/* Navigation Links */}
           {navLinks.map((link) => (
             <div key={link.name}>
-              <Link
-                href={link.href}
-                className="block px-3 py-2 text-gray-200 hover:text-white hover:bg-gray-800 rounded-md"
-              >
-                {link.name}
-              </Link>
+              {link.href ? (
+                <Link
+                  href={link.href}
+                  className="block px-3 py-2 text-gray-200 hover:text-white hover:bg-gray-800 rounded-md"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <span className="block px-3 py-2 text-gray-200 cursor-pointer">
+                  {link.name}
+                </span>
+              )}
               {link.dropdownItems && (
                 <div className="pl-4 mt-1 space-y-1">
                   {link.dropdownItems.map((item) => (

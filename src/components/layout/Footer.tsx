@@ -11,9 +11,9 @@ const navLinks = [
     name: 'Services', 
     href: '#services',
     dropdownItems: [
-      { name: 'Private Events', href: '#private-events' },
-      { name: 'Corporate Events', href: '#corporate-events' },
-      { name: 'Cocktail Masterclass', href: '#cocktail-masterclass' },
+      { name: 'Explore Bars', href: '/bars' },
+      { name: 'Bar Hire', href: '/hire' },
+      { name: 'Masterclass', href: '/masterclass' },
     ]
   },
   { name: 'Testimonial', href: '#testimonial' },
