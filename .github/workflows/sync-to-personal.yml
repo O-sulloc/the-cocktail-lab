@@ -19,8 +19,6 @@ jobs:
           git config --global user.email "[email protected]"
 
       - name: Mirror Push to Personal Repo
-        env:
-          TOKEN: ${{ secrets.PERSONAL_REPO_PAT }}
         run: |
-          git remote add mirror https://x-access-token:$TOKEN@github.com/O-sulloc/thecocktaillab.git
+          git remote add mirror https://x-access-token:${{ secrets.PERSONAL_REPO_PAT }}@github.com/O-sulloc/thecocktaillab.git
           git push mirror main --force
