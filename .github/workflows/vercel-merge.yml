@@ -20,3 +20,5 @@ jobs:
           vercel-project-id: ${{ secrets.PROJECT_ID }}
           vercel-project-name: the-cocktail-lab
           vercel-args: "--prod --confirm"
+          github-comment: false
+          github-deployment: false
