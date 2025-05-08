@@ -58,10 +58,19 @@ const BarCard = ({ bar, isHoverDevice, activeTooltip, setActiveTooltip, getToolt
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60" />
+
+        {/* Button - Moved to bottom */}
+        <div className="absolute bottom-6 left-0 right-0 flex justify-center">
+          <Button
+            text="Check Availability"
+            href={bar.link}
+            className="z-20"
+          />
+        </div>
       </div>
     </a>
     {/* Title and InfoIcon in the same row, outside the <a> */}
-    <div className="flex items-center gap-2 mt-2">
+    <div className="flex items-center gap-2 mt-2 justify-center">
       <h3 className="relative text-2xl font-bold text-white group-hover:text-emerald-600 transition-colors duration-300">
         <span className="relative">
           {bar.name}
@@ -145,4 +154,3 @@ export default function BarsPage() {
     </>
   );
 }
-
