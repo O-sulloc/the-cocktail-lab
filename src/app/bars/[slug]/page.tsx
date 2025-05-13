@@ -8,8 +8,9 @@ import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import UnderlineButton from '@/components/common/UnderlineButton';
 
-export default function BarDetailPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params);
+  
   const bar: Bar | undefined = barsContent.bars.find((b) => b.slug === slug);
 
   // Helper functions for BarCard props
