@@ -37,7 +37,7 @@ const Navbar = () => {
       ]
     },
     { name: 'Masterclass', href: '#' },
-    { name: 'Bars', href: '/bars' },
+    { name: 'Explore Bars', href: '/bars' },
     { 
       name: 'Testimonial', 
       dropdownItems: [
@@ -100,7 +100,7 @@ const Navbar = () => {
                     {link.href ? (
                       <Link
                         href={link.href}
-                        className="relative text-gray-300 text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
+                        className="relative text-white text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
                       >
                         <span className="relative">
                           {link.name}
@@ -108,7 +108,7 @@ const Navbar = () => {
                         </span>
                       </Link>
                     ) : (
-                      <span className="relative text-gray-300 text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200 cursor-pointer">
+                      <span className="relative text-white text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200 cursor-pointer">
                         <span className="relative">
                           {link.name}
                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
@@ -117,7 +117,7 @@ const Navbar = () => {
                     )}
                     {link.dropdownItems && (
                       <svg
-                        className={`w-4 h-4 transition-all duration-200 text-gray-300 group-hover:text-emerald-600 ${
+                        className={`w-4 h-4 transition-all duration-200 text-white group-hover:text-emerald-600 ${
                           activeDropdown === link.name ? 'rotate-180' : ''
                         }`}
                         viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ const Navbar = () => {
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="block px-4 py-2.5 text-[14px] text-gray-300 hover:text-emerald-600 transition-colors duration-200"
+                            className="block px-4 py-2.5 text-[14px] text-white hover:text-emerald-600 transition-colors duration-200"
                           >
                             {item.name}
                           </Link>
