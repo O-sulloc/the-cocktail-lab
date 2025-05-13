@@ -103,13 +103,13 @@ const Bars = () => {
           >
             {bars.map((bar, index) => (
               <Link 
-                href={bar.link} 
+                href={`/bars/${bar.slug}`}
                 key={`${bar.id}-${index}`}
                 className="relative w-[200px] h-[280px] md:w-[300px] md:h-[400px] flex-shrink-0 mr-4 md:mr-8 carousel-item group pt-4"
               >
                 <div className="absolute inset-0 top-4 rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 ease-out transform group-hover:-translate-y-8 group-hover:scale-110 group-hover:z-20 group-hover:shadow-[0_35px_35px_-15px_rgba(0,0,0,0.7)]">
                   <Image
-                    src={bar.image}
+                    src={bar.thumb}
                     alt={bar.alt}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
