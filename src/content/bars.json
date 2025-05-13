@@ -2,75 +2,133 @@
   "bars": [
     { 
       "id": 1, 
-      "name": "Barcycle",
-      "inventory": 1,
-      "info": true,
-      "image": "/bar-1.webp", 
-      "alt": "Luxury Bar Setup 1", 
-      "link": "/bars/luxury-bar-1"
-    },
-    { 
-      "id": 2, 
-      "name": "Boutique",
-      "inventory": 2,
-      "info": false,
-      "image": "/bar-2.webp", 
-      "alt": "Boutique", 
-      "link": "/bars/luxury-bar-2"
-    },
-    { 
-      "id": 3, 
       "name": "Elegant Marble",
       "inventory": 4,
       "info": false,
-      "image": "/bar-3.webp", 
-      "alt": "Elegant Marble", 
-      "link": "/bars/luxury-bar-3"
+      "thumb": "/bars/thumb/marble-mobile-cocktail-bar-hire-featured.webp",
+      "image": "/bars/1.jpg",
+      "alt": "Elegant Marble Mobile Cocktail Bar Hire" ,
+      "slug": "elegant-marble",
+      "spec": {
+        "cm": "L140, W90, H115",
+        "inch": "L55, W35, H45",
+        "available_sizes": "140cm & 280cm (utilising 2 bars)"
+      },
+      "desc": "One of our most popular choices, the Elegant Marble is sleek and minimal and blends perfectly with a more modern furniture choice."
     },
     { 
-      "id": 4, 
-      "name": "Pastel Rustic",
-      "inventory": 1,
-      "info": false,
-      "image": "/bar-4.webp", 
-      "alt": "Pastel Rustic", 
-      "link": "/bars/luxury-bar-4"
-    },
-    { 
-      "id": 5, 
+      "id": 2, 
       "name": "Italian Marble",
       "inventory": 1,
       "info": false,
-      "image": "/bar-5.webp", 
-      "alt": "Italian Marble", 
-      "link": "/bars/luxury-bar-5"
+      "thumb": "/bars/thumb/stone-mobile-cocktail-bar-hire-featured.webp", 
+      "image": "/bars/2.jpg",
+      "alt": "Italian Marble Mobile Cocktail Bar Hire" ,
+      "slug": "italian-marble",
+      "spec": {
+        "cm": "L140, W90, H115",
+        "inch": "L55, W35, H45"
+      },
+      "desc": "One of our most popular choices, the Italian Marble is sleek and classy and blends perfectly with a more modern furniture choice."
+    },
+    { 
+      "id": 3, 
+      "name": "Boutique",
+      "inventory": 2,
+      "info": false,
+      "thumb": "/bars/thumb/cushion-mobile-cocktail-bar-hire-featured.webp",
+      "image": "/bars/3.jpg",
+      "alt": "Boutique Mobile Bar Hire" ,
+      "slug": "boutique",
+      "spec": {
+        "cm": "L140, W90, H115",
+        "inch": "L55, W35, H45",
+        "available_sizes": "140cm & 280cm (utilising 2 bars)"
+      },
+      "desc": "One of our most popular choices, the Boutique is sleek and cosy and blends perfectly with a more modern furniture choice."
+    },
+    { 
+      "id": 4, 
+      "name": "Rustic LED",
+      "inventory": 4,
+      "info": false,
+      "thumb": "/bars/thumb/wooden-mobile-cocktail-bar-hire-featured.webp",
+      "image": "/bars/4.jpg",
+      "alt": "Rustic LED Mobile Cocktail Bar Hire" ,
+      "slug": "rustic-led",
+      "spec": {
+        "cm": "L140, W90, H115",
+        "inch": "L55, W35, H45",
+        "available_sizes": "140cm & 280cm (utilising 2 bars)",
+        "with": "With White LED"
+      },
+      "desc": "Our Classic Rustic LED is perfect whatever the occasion, the bespoke design lends a vintage feel creating the right atmosphere for your party."
+    },
+    { 
+      "id": 5, 
+      "name": "Pastel Rustic",
+      "inventory": 1,
+      "info": false,
+      "thumb": "/bars/thumb/pastel-mobile-cocktail-bar-hire-featured.webp",
+      "image": "/bars/5.jpg",
+      "alt": "Pastel Rustic Mobile Cocktail Bar Hire",
+      "slug": "pastel-rustic",
+      "spec": {
+        "cm": "L140, W90, H115",
+        "inch": "L55, W35, H45",
+        "with": "With White LED"
+      },
+      "desc": "A muted, neutral Pastel Rustic suitable for all events, perfect for setting the right tone for your party!"
     },
     { 
       "id": 6, 
-      "name": "Multicolour LED White",
-      "inventory": 4,
-      "info": false,
-      "image": "/bar-6.webp", 
-      "alt": "Luxury Bar Setup 6", 
-      "link": "/bars/luxury-bar-6"
+      "name": "Barcycle",
+      "inventory": 1,
+      "info": true,
+      "thumb": "/bars/thumb/bicycle-mobile-cocktail-bar-hire-featured.webp",
+      "image": "/bars/6.jpg",
+      "alt": "Barcycle Mobile Cocktail Bar Hire",
+      "slug": "barcycle",
+      "spec": {
+        "cm": "L190, W90, H135",
+        "inch": "L75, W35, H53",
+        "additional_fee": 65
+      },
+      "desc": "A truly unique bar option. Our lovingly hand crafted Barcycle will wow your guests as we serve delectable cocktails from this unique piece of art."
     },
     { 
       "id": 7, 
       "name": "Rustic LED 2M",
       "inventory": 1,
       "info": true,
-      "image": "/bar-7.webp", 
-      "alt": "Luxury Bar Setup 7", 
-      "link": "/bars/luxury-bar-7"
+      "thumb": "/bars/thumb/wooden-2m-mobile-cocktail-bar-hire-featured.webp",
+      "image": "/bars/7.jpg",
+      "alt": "Rustic LED 2m Mobile Cocktail Bar Hire",
+      "slug": "rustic-led-2m",
+      "spec": {
+        "cm": "L200, W90, H115",
+        "inch": "L79, W35, H45",
+        "additional_fee": 95,
+        "with": "With White LED"
+      },
+      "desc":"Our large Rustic LED 2M is ideal for larger events making a fantastic impact. At 2 metres long there’s plenty of space for your guests to enjoy their time at the bar."
     },
     { 
       "id": 8, 
-      "name": "Rustic LED",
+      "name": "Multicolour LED White",
       "inventory": 4,
       "info": false,
-      "image": "/bar-8.webp", 
-      "alt": "Rustic LED", 
-      "link": "/bars/luxury-bar-8"
+      "thumb": "/bars/thumb/white-led-mobile-cocktail-bar-hire-featured.gif",
+      "image": "/bars/8.gif",
+      "alt": "Multicolour White Mobile Cocktail Bar Hire",
+      "slug": "multicolour-led-white",
+      "spec": {
+        "cm": "L150, W80, H115",
+        "inch": "L59, W31, H45",
+        "available_sizes": "150cm - 600cm (utilising 4 bars)",
+        "with": "With LED Lights, choose your colour"
+      },
+      "desc": "Modern White with multiple LED colours to light you party and create beautiful memories with your guests. A nice touch which will not go unnoticed!"
     }
   ]
 } 
