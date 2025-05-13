@@ -7,6 +7,8 @@ import BarCard from '@/components/BarCard';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import UnderlineButton from '@/components/common/UnderlineButton';
+import Image from 'next/image';
+
 
 export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params);
@@ -38,11 +40,13 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       <section className="relative w-full min-h-[60vh] flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
-          <img
+          <Image
             src={bar.image}
             alt={bar.alt}
-            className="w-full h-full object-cover object-center"
+            fill
+            className="object-cover object-center"
             style={{ maxHeight: '600px' }}
+            priority
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
