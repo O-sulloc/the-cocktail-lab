@@ -21,17 +21,31 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About Us', href: '#about' },
     { 
-      name: 'Services', 
+      name: 'About', 
       dropdownItems: [
-        { name: 'Explore Bars', href: '/bars' },
-        { name: 'Bar Hire', href: '/hire' },
-        { name: 'Masterclass', href: '/masterclass' },
+        { name: 'Why Us', href: '#' },
+        { name: 'Newsroom', href: '#' },
+        { name: 'Gallery', href: '#' },
       ]
     },
-    { name: 'Testimonial', href: '#testimonial' },
-    { name: 'Contact', href: '#contact' },
+    { 
+      name: 'Bar Hire', 
+      dropdownItems: [
+        { name: 'For Private Events', href: '#' },
+        { name: 'For Corporate Events', href: '#' },
+      ]
+    },
+    { name: 'Masterclass', href: '#' },
+    { name: 'Bars', href: '/bars' },
+    { 
+      name: 'Testimonial', 
+      dropdownItems: [
+        { name: 'Reviews', href: '#' },
+        { name: 'Cast studies', href: '#' },
+      ]
+    },
+    { name: 'Contact', href: '#' },
   ];
 
   return (
@@ -61,7 +75,7 @@ const Navbar = () => {
                 ) : (
                   <div className="relative h-28 w-48 mt-10">
                     <Image
-                      src="/logo.svg"
+                      src="/The-Cocktail-Lab-Logo.svg"
                       alt="The Cocktail Lab"
                       fill
                       className="object-contain"

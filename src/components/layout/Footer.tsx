@@ -31,7 +31,7 @@ const Footer = () => {
             <Link href="/" className="flex items-center">
               <div className="relative h-28 w-48">
                 <Image
-                  src="/logo.svg"
+                  src="/The-Cocktail-Lab-Logo.svg"
                   alt="The Cocktail Lab"
                   fill
                   className="object-contain"
