@@ -23,7 +23,7 @@ const BarCard = ({ bar, isHoverDevice, activeTooltip, setActiveTooltip, getToolt
       {/* Image Container with rounded corners */}
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl mb-6">
         {/* Badge */}
-        <Badge>
+        <Badge className="absolute top-4 left-4 z-10">
           {bar.inventory} Bars Available
         </Badge>
         {/* Arrow Icon (top-right, on hover) */}
