@@ -1,13 +1,19 @@
 'use client';
 
 import barsContent from '@/content/bars.json';
-import type { Bar } from '@/types/bars';
-import React, { useMemo } from 'react';
+import type { Bar, SizeSpec } from '@/types/bars';
+import React, { useMemo, useRef, useState } from 'react';
 import BarCard from '@/components/BarCard';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import UnderlineButton from '@/components/common/UnderlineButton';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Badge from '@/components/common/Badge';
 
 
 export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,6 +38,9 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       .slice(0, 3);
   }, [slug]);
 
+  // Size Section with cm/inch toggle
+  const [unit, setUnit] = useState<'cm' | 'inch'>('cm');
+
   if (!bar) return <div className="text-center py-20 text-2xl">Bar not found</div>;
 
   return (
@@ -54,26 +63,93 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center text-center text-white px-4">
           {/* 로고/아이콘 등 필요시 추가 */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-2 drop-shadow-lg">{bar.name}</h1>
-          <p className="mb-4 text-lg opacity-90">
+          <h1 className="text-4xl md:text-6xl font-bold mb-2 drop-shadow-lg" style={{ fontFamily: 'Caviar Dreams' }}>
+            {bar.name}
+          </h1>
+        </div>
+      </section>
+
+      {/* About + 이미지 슬라이더 좌우 배치 */}
+      <section className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row gap-12 items-center">
+        {/* 왼쪽: 이미지 슬라이더 */}
+        {bar.images && bar.images.length > 0 && (
+          <div className="w-full md:w-1/2">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              loop={true}
+              spaceBetween={20}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 3500, disableOnInteraction: false }}
+              className="bar-detail-swiper"
+            >
+              {bar.images.map((img, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden">
+                    <Image
+                      src={img}
+                      alt={`Bar image ${idx + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+        
+        {/* 오른쪽: About */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          {/* Badge */}
+          <Badge className="static relative inline-block my-2">
             {bar.inventory} Bars Available
-          </p>
-          {bar.spec && bar.spec.additional_fee && (
-            <p className="mb-4 text-lg opacity-90 text-rose-400">
-              Additional Fee: £{bar.spec.additional_fee}
-            </p>
-          )}
-          <a
-            href="#contact" // 필요시 실제 예약/문의 링크로 변경
-            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-emerald-700 transition-colors"
-          >
-            Check Availability
-          </a>
+          </Badge>
+          <h2 className="text-2xl font-bold mb-4 text-white">{bar.name}</h2>
+          <p className="text-lg mb-4 text-gray-200">{bar.desc}</p>
+
+          {/* Size Section with cm/inch toggle */}
+          <div className="mb-4">
+            <div className="flex items-center gap-4 mb-2">
+              <h3 className="text-2xl font-bold text-white mr-4">Size</h3>
+              {/* Toggle */}
+              <div className="flex items-center gap-2">
+                <span className={unit === 'cm' ? 'font-bold text-white' : 'text-gray-400'}>cm</span>
+                <button
+                  type="button"
+                  className={`w-10 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ${unit === 'inch' ? 'bg-[#0f3923]' : 'bg-gray-200'}`}
+                  onClick={() => setUnit(unit === 'cm' ? 'inch' : 'cm')}
+                  aria-label="Toggle cm/inch"
+                >
+                  <span
+                    className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${unit === 'inch' ? 'translate-x-4' : ''}`}
+                  />
+                </button>
+                <span className={unit === 'inch' ? 'font-bold text-white' : 'text-gray-400'}>inch</span>
+              </div>
+            </div>
+            {/* 3칸 사이즈 표 */}
+            <div className="flex gap-8 justify-center mb-2">
+              {(['L', 'W', 'H'] as (keyof SizeSpec)[]).map((key) => (
+                <div key={key} className="text-center min-w-[70px]">
+                  <div className="text-2xl font-bold text-white">{bar.spec?.[unit]?.[key]}</div>
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-8 justify-center">
+              {(['L', 'W', 'H'] as (keyof SizeSpec)[]).map((key) => (
+                <div key={key} className="text-center min-w-[70px]">
+                  <div className="text-sm text-gray-400 mt-1">{key === 'L' ? 'Length' : key === 'W' ? 'Width' : 'Height'}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Specs Section */}
-      <section className="w-full bg-black/80 py-8">
+      {/* <section className="w-full py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
           {bar.spec && Object.entries(bar.spec).map(([key, value], idx) => {
             // Label formatting: snake_case → Title Case
@@ -88,13 +164,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
             );
           })}
         </div>
-      </section>
-
-      {/* 상세 설명, 기타 정보 등은 아래에 추가 가능 */}
-      <section className="max-w-3xl mx-auto py-16 px-4 text-center">
-        <h2 className="text-2xl font-bold mb-4 text-white">About this Bar</h2>
-        <p className="text-lg text-gray-200">{bar.desc}</p>
-      </section>
+      </section> */}
 
       {/* Reviews */}
       <Reviews />
