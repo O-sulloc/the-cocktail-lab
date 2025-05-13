@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import chooseContent from '../content/choose.json';
+import UnderlineButton from '@/components/common/UnderlineButton';
 
 const Choose = () => {
   return (
@@ -56,28 +57,7 @@ const Choose = () => {
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-3 lg:mb-4">{step.title}</h3>
                   <p className="text-gray-400 text-sm md:text-base lg:text-lg">{step.description}</p>
                   {step.number === "2" && (
-                    <Link 
-                      href="/testimonials"
-                      className="group flex items-center mt-6 text-emerald-500 hover:text-emerald-400 transition-colors relative"
-                    >
-                      <span className="text-sm lg:text-base font-medium relative">
-                        Read All Testimonials
-                        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 group-hover:w-full transition-all duration-300" />
-                      </span>
-                      <svg 
-                        className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M13 7l5 5m0 0l-5 5m5-5H6" 
-                        />
-                      </svg>
-                    </Link>
+                    <UnderlineButton href="/testimonials">Read All Testimonials</UnderlineButton>
                   )}
                 </div>
               </motion.article>
