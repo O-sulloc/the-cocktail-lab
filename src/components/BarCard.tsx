@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { Bar } from '@/types/bars';
 import InfoIcon from '@/components/common/Tooltip/InfoIcon';
 import Button from '@/components/common/Button';
+import Badge from '@/components/common/Badge';
 
 export interface BarCardProps {
   bar: Bar;
@@ -22,9 +23,9 @@ const BarCard = ({ bar, isHoverDevice, activeTooltip, setActiveTooltip, getToolt
       {/* Image Container with rounded corners */}
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl mb-6">
         {/* Badge */}
-        <span className="absolute top-4 left-4 z-10 px-4 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/20 transition-colors duration-300 group-hover:bg-emerald-600 group-hover:text-white">
+        <Badge>
           {bar.inventory} Bars Available
-        </span>
+        </Badge>
         {/* Arrow Icon (top-right, on hover) */}
         <span className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <svg 
