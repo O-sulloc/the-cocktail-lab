@@ -17,8 +17,7 @@
       "slug": "elegant-marble",
       "spec": {
         "cm": { "L": 140, "W": 90, "H": 115 },
-        "inch": { "L": 55, "W": 35, "H": 45 },
-        "available_sizes": "140cm & 280cm (utilising 2 bars)"
+        "inch": { "L": 55, "W": 35, "H": 45 }
       },
       "desc": "One of our most popular choices, the Elegant Marble is sleek and minimal and blends perfectly with a more modern furniture choice."
     },
@@ -58,8 +57,7 @@
       "slug": "boutique",
       "spec": {
         "cm": { "L": 140, "W": 90, "H": 115 },
-        "inch": { "L": 55, "W": 35, "H": 45 },
-        "available_sizes": "140cm & 280cm (utilising 2 bars)"
+        "inch": { "L": 55, "W": 35, "H": 45 }
       },
       "desc": "One of our most popular choices, the Boutique is sleek and cosy and blends perfectly with a more modern furniture choice."
     },
@@ -81,8 +79,7 @@
       "spec": {
         "cm": { "L": 140, "W": 90, "H": 115 },
         "inch": { "L": 55, "W": 35, "H": 45 },
-        "available_sizes": "140cm & 280cm (utilising 2 bars)",
-        "with": "With White LED"
+        "colour": "With White LED"
       },
       "desc": "Our Classic Rustic LED is perfect whatever the occasion, the bespoke design lends a vintage feel creating the right atmosphere for your party."
     },
@@ -104,7 +101,7 @@
       "spec": {
         "cm": { "L": 140, "W": 90, "H": 115 },
         "inch": { "L": 55, "W": 35, "H": 45 },
-        "with": "With White LED"
+        "colour": "With White LED"
       },
       "desc": "A muted, neutral Pastel Rustic suitable for all events, perfect for setting the right tone for your party!"
     },
@@ -152,7 +149,7 @@
         "cm": { "L": 200, "W": 90, "H": 115 },
         "inch": { "L": 79, "W": 35, "H": 45 },
         "additional_fee": 95,
-        "with": "With White LED"
+        "colour": "With White LED"
       },
       "desc":"Our large Rustic LED 2M is ideal for larger events making a fantastic impact. At 2 metres long there's plenty of space for your guests to enjoy their time at the bar."
     },
@@ -174,10 +171,10 @@
       "spec": {
         "cm": { "L": 150, "W": 80, "H": 115 },
         "inch": { "L": 59, "W": 31, "H": 45 },
-        "available_sizes": "150cm - 600cm (utilising 4 bars)",
-        "with": "With LED Lights, choose your colour"
+        "colour": "With Various LED Lights, choose your own colour"
       },
-      "desc": "Modern White with multiple LED colours to light you party and create beautiful memories with your guests. A nice touch which will not go unnoticed!"
+      "desc": "Modern White with multiple LED colours to light you party and create beautiful memories with your guests. A nice touch which will not go unnoticed!",
+      "how_big": "/bars/led-white/how-big.gif"
     }
   ]
 } 

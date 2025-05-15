@@ -40,6 +40,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
 
   // Size Section with cm/inch toggle
   const [unit, setUnit] = useState<'cm' | 'inch'>('cm');
+  const [quantity, setQuantity] = useState<number>(1);
 
   if (!bar) return <div className="text-center py-20 text-2xl">Bar not found</div>;
 
@@ -106,13 +107,13 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
           <Badge className="static relative inline-block my-2">
             {bar.inventory} Bars Available
           </Badge>
-          <h2 className="text-2xl font-bold mb-4 text-white">{bar.name}</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white">{bar.name}</h2>
           <p className="text-lg mb-4 text-gray-200">{bar.desc}</p>
 
           {/* Size Section with cm/inch toggle */}
-          <div className="mb-4">
-            <div className="flex items-center gap-4 mb-2">
-              <h3 className="text-2xl font-bold text-white mr-4">Size</h3>
+          <div className="mb-4 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex items-center gap-4 mb-4 justify-center md:justify-start w-full">
+              <span className="text-3xl font-bold text-white">Size</span>
               {/* Toggle */}
               <div className="flex items-center gap-2">
                 <span className={unit === 'cm' ? 'font-bold text-white' : 'text-gray-400'}>cm</span>
@@ -130,14 +131,17 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
               </div>
             </div>
             {/* 3칸 사이즈 표 */}
-            <div className="flex gap-8 justify-center mb-2">
+            <div className="flex gap-8 justify-center md:justify-start mb-2 w-full">
               {(['L', 'W', 'H'] as (keyof SizeSpec)[]).map((key) => (
                 <div key={key} className="text-center min-w-[70px]">
-                  <div className="text-2xl font-bold text-white">{bar.spec?.[unit]?.[key]}</div>
+                  <div className="text-2xl font-bold text-white">
+                    {bar.spec?.[unit]?.[key]}
+                    <span className="text-base text-gray-400 ml-1">{unit}</span>
+                  </div>
                 </div>
               ))}
             </div>
-            <div className="flex gap-8 justify-center">
+            <div className="flex gap-8 justify-center md:justify-start w-full">
               {(['L', 'W', 'H'] as (keyof SizeSpec)[]).map((key) => (
                 <div key={key} className="text-center min-w-[70px]">
                   <div className="text-sm text-gray-400 mt-1">{key === 'L' ? 'Length' : key === 'W' ? 'Width' : 'Height'}</div>
@@ -145,26 +149,106 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
               ))}
             </div>
           </div>
+
+          {/* Extend Your Bar Section */}
+          {bar.inventory && bar.inventory > 1 && (
+            <div className="mt-8 flex flex-col items-center md:items-start text-center md:text-left">
+              <span className="text-2xl font-bold text-white mb-4 block">Extend Your Bar</span>
+              {/* Quantity 조절 UI 및 로직 */}
+              <div className="flex items-center gap-3 mb-4 justify-center md:justify-start w-full">
+                <span className="text-lg text-gray-200">Quantity:</span>
+                <button
+                  onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                  disabled={quantity <= 1}
+                  className="px-3 py-1 rounded-md bg-gray-700 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed text-white"
+                >
+                  -
+                </button>
+                <span className="text-lg font-semibold text-white w-5 text-center">{quantity}</span>
+                <button
+                  onClick={() => setQuantity(prev => Math.min(bar.inventory || 1, prev + 1))}
+                  disabled={quantity >= (bar.inventory || 1)}
+                  className="px-3 py-1 rounded-md bg-gray-700 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed text-white"
+                >
+                  +
+                </button>
+              </div>
+              <div className="flex gap-8 justify-center md:justify-start w-full mb-2">
+                <div className="text-center min-w-[100px]">
+                  <div className="text-2xl font-bold text-white">
+                    {bar.spec?.[unit]?.L ? bar.spec[unit]!.L * quantity : 'N/A'}
+                    <span className="text-base text-gray-400 ml-1">{unit}</span>
+                  </div>
+                </div>
+                <div className="text-center min-w-[100px]">
+                  <div className="text-2xl font-bold text-white">
+                    {quantity} bar
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-8 justify-center md:justify-start w-full mb-0">
+                <div className="text-center min-w-[100px]">
+                  <div className="text-sm text-gray-400 mt-1">Total Length</div>
+                </div>
+                <div className="text-center min-w-[100px]">
+                  <div className="text-sm text-gray-400 mt-1">Utilize</div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Color Section */}
+          {bar.spec?.colour && (
+            <div className="mt-8 flex flex-col items-center md:items-start text-center md:text-left">
+              <span className="text-2xl font-bold text-white mb-2 block">LED colour</span>
+              <span className="text-lg text-gray-200">{bar.spec.colour}</span>
+            </div>
+          )}
+
+          {/* Additional Fee Section */}
+          {typeof bar.spec?.additional_fee === 'number' && (
+            <div className="mt-8 flex flex-col items-center md:items-start text-center md:text-left">
+              <span className="text-2xl font-bold text-white mb-2 block">Additional Fee</span>
+              <span className="text-lg text-gray-200">
+                £{bar.spec.additional_fee}
+                <span className="text-base text-gray-400 ml-1">per bar</span>
+              </span>
+              <span className="text-sm text-gray-400 mt-1">
+                This bar requires special logistics and an extra person for setup.
+              </span>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Specs Section */}
-      {/* <section className="w-full py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
-          {bar.spec && Object.entries(bar.spec).map(([key, value], idx) => {
-            // Label formatting: snake_case → Title Case
-            const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-            // Value formatting for additional_fee
-            const displayValue = key === 'additional_fee' ? `£${value}` : value;
-            return (
-              <div key={idx} className="text-center">
-                <div className="text-2xl font-bold text-white">{displayValue}</div>
-                <div className="text-sm text-gray-400 mt-1">{label}</div>
-              </div>
-            );
-          })}
-        </div>
-      </section> */}
+      {/* How big */}
+      {bar.inventory && bar.inventory >= 4 && (
+        <section className="max-w-5xl mx-auto py-16 px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white" style={{ fontFamily: 'Caviar Dreams' }}>How Big Is Your Event?</h2>
+          <p className="mb-4 text-lg text-gray-100">
+            We offer White Mobile Cocktail Bar Hire in four LED colours, 150cm-wide, perfect for{' '}
+            <a href="#" className="underline">weddings</a>, <a href="#" className="underline">corporate events</a>, or <a href="#" className="underline">private parties</a>.
+            Stylish and versatile, these bars are easy to set up and can be customised to match your event’s theme.
+            <a href="#" className="underline ml-1">Contact us</a> to secure these bars for your upcoming event!
+          </p>
+          <p className="mb-8 text-base text-gray-100">
+            1 bar serves 100 people, 4 bars serve 400+. We can source more bars and set up separate areas for larger events, with a larger guest list.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+            {bar.how_big && (
+              <Image
+                src={bar.how_big}
+                alt="How big is your event"
+                width={900}
+                height={280}
+                className="rounded-lg shadow"
+                style={{ maxWidth: '100%', height: 'auto' }}
+                priority
+              />
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Reviews */}
       <Reviews />

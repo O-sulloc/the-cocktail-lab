@@ -17,4 +17,5 @@ export interface Bar {
     [key: string]: any;
   };
   desc: string;
+  how_big?: string;
 } 
