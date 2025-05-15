@@ -37,7 +37,7 @@ const Navbar = () => {
       ]
     },
     { name: 'Masterclass', href: '#' },
-    { name: 'Explore Bars', href: '/bars' },
+    { name: 'Our Bars', href: '/bars' },
     { 
       name: 'Testimonial', 
       dropdownItems: [

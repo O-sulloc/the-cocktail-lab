@@ -6,18 +6,34 @@ import SocialIcons from '../common/SocialIcons';
 
 // Navigation links (matching Navbar)
 const navLinks = [
-  { name: 'About Us', href: '#about' },
   { 
-    name: 'Services', 
-    href: '#services',
+    name: 'About', 
     dropdownItems: [
-      { name: 'Explore Bars', href: '/bars' },
-      { name: 'Bar Hire', href: '/hire' },
-      { name: 'Masterclass', href: '/masterclass' },
+      { name: 'Why Us', href: '#' },
+      { name: 'Newsroom', href: '#' },
+      { name: 'Gallery', href: '#' },
+      { name: 'Sustainability', href: '#' },
+      { name: 'Privacy Policy', href: '#' },
+      { name: 'Cookie Policy', href: '#' },
     ]
   },
-  { name: 'Testimonial', href: '#testimonial' },
-  { name: 'Contact', href: '#contact' },
+  { 
+    name: 'Bar Hire', 
+    dropdownItems: [
+      { name: 'For Private Events', href: '#' },
+      { name: 'For Corporate Events', href: '#' },
+    ]
+  },
+  { name: 'Masterclass', href: '#' },
+  { name: 'Our Bars', href: '/bars' },
+  { 
+    name: 'Testimonial', 
+    dropdownItems: [
+      { name: 'Reviews', href: '#' },
+      { name: 'Cast studies', href: '#' },
+    ]
+  },
+  { name: 'Contact', href: '#' },
 ];
 
 const Footer = () => {
@@ -62,7 +78,7 @@ const Footer = () => {
       {/* Center Section - Navigation */}
       <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
             {navLinks.map((link) => (
               <div key={link.name} className="flex flex-col">
                 <h3 className="text-lg font-bold text-white mb-4">{link.name}</h3>
