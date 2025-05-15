@@ -39,7 +39,7 @@ export default function BarsPage() {
     <>
       <section className="w-full flex flex-col items-center justify-center py-20 mt-24 md:mt-32">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center mb-4 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
-          Our Bars
+          Explore Our Bars
         </h1>
         <p className="text-lg md:text-xl text-gray-400 text-center px-4 max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
           Explore our premium mobile bars, designed to elevate every event with expert mixology and timeless style.
