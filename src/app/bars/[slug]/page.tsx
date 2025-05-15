@@ -270,7 +270,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
           <p className="mb-4 text-lg text-gray-100">
             We offer White Mobile Cocktail Bar Hire in four LED colours, 150cm-wide, perfect for{' '}
             <a href="#" className="underline">weddings</a>, <a href="#" className="underline">corporate events</a>, or <a href="#" className="underline">private parties</a>.
-            Stylish and versatile, these bars are easy to set up and can be customised to match your event's theme.
+            Stylish and versatile, these bars are easy to set up and can be customised to match your event&apos;s theme.
             <a href="#" className="underline ml-1">Contact us</a> to secure these bars for your upcoming event!
           </p>
           <p className="mb-8 text-base text-gray-100">
