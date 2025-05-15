@@ -13,6 +13,7 @@ export interface Bar {
   spec?: {
     cm?: SizeSpec;
     inch?: SizeSpec;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
   desc: string;

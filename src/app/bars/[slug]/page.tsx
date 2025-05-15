@@ -2,7 +2,7 @@
 
 import barsContent from '@/content/bars.json';
 import type { Bar, SizeSpec } from '@/types/bars';
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import BarCard from '@/components/BarCard';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
