@@ -5,7 +5,8 @@ export interface Bar {
   name: string;
   thumb: string;
   image: string;
-  images?: string[];
+  detail_images?: string[];
+  action_images?: string[];
   alt: string;
   inventory?: number;
   info?: boolean;

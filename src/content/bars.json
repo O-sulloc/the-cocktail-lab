@@ -7,11 +7,18 @@
       "info": false,
       "thumb": "/bars/thumb/marble-mobile-cocktail-bar-hire-featured.webp",
       "image": "/bars/elegant-marble/1.jpg",
-      "images": [
+      "detail_images": [
         "/bars/elegant-marble/detail-1.jpg",
         "/bars/elegant-marble/detail-2.jpg",
         "/bars/elegant-marble/detail-3.jpg",
         "/bars/elegant-marble/detail-4.jpg"
+      ],
+      "action_images": [
+        "/bars/elegant-marble/in-action-1.jpg",
+        "/bars/elegant-marble/in-action-2.jpg",
+        "/bars/elegant-marble/in-action-3.jpg",
+        "/bars/elegant-marble/in-action-4.jpg",
+        "/bars/elegant-marble/in-action-5.jpg"
       ],
       "alt": "Elegant Marble Mobile Cocktail Bar Hire" ,
       "slug": "elegant-marble",
@@ -28,10 +35,16 @@
       "info": false,
       "thumb": "/bars/thumb/stone-mobile-cocktail-bar-hire-featured.webp", 
       "image": "/bars/2.jpg",
-      "images": [
+      "detail_images": [
         "/bars/italian-marble/detail-1.jpg",
         "/bars/italian-marble/detail-2.jpg",
         "/bars/italian-marble/detail-3.jpg"
+      ],
+      "action_images": [
+        "/bars/italian-marble/in-action-1.jpg",
+        "/bars/italian-marble/in-action-2.jpg",
+        "/bars/italian-marble/in-action-3.jpg",
+        "/bars/italian-marble/in-action-4.jpg"
       ],
       "alt": "Italian Marble Mobile Cocktail Bar Hire" ,
       "slug": "italian-marble",
@@ -48,10 +61,16 @@
       "info": false,
       "thumb": "/bars/thumb/cushion-mobile-cocktail-bar-hire-featured.webp",
       "image": "/bars/3.jpg",
-      "images": [
+      "detail_images": [
         "/bars/boutique/detail-1.jpg",
         "/bars/boutique/detail-2.jpg",
         "/bars/boutique/detail-3.jpg"
+      ],
+      "action_images": [
+        "/bars/boutique/in-action-1.jpg",
+        "/bars/boutique/in-action-2.jpg",
+        "/bars/boutique/in-action-3.jpg",
+        "/bars/boutique/in-action-4.jpg"
       ],
       "alt": "Boutique Mobile Bar Hire" ,
       "slug": "boutique",
@@ -68,11 +87,20 @@
       "info": false,
       "thumb": "/bars/thumb/wooden-mobile-cocktail-bar-hire-featured.webp",
       "image": "/bars/4.jpg",
-      "images": [
+      "detail_images": [
         "/bars/rustic-led/detail-1.jpg",
         "/bars/rustic-led/detail-2.jpg",
         "/bars/rustic-led/detail-3.jpg",
         "/bars/rustic-led/detail-4.jpg"
+      ],
+      "action_images": [
+        "/bars/rustic-led/in-action-1.jpg",
+        "/bars/rustic-led/in-action-2.jpg",
+        "/bars/rustic-led/in-action-3.jpg",
+        "/bars/rustic-led/in-action-4.jpg",
+        "/bars/rustic-led/in-action-5.jpg",
+        "/bars/rustic-led/in-action-6.jpg",
+        "/bars/rustic-led/in-action-7.jpg"
       ],
       "alt": "Rustic LED Mobile Cocktail Bar Hire" ,
       "slug": "rustic-led",
@@ -90,11 +118,19 @@
       "info": false,
       "thumb": "/bars/thumb/pastel-mobile-cocktail-bar-hire-featured.webp",
       "image": "/bars/5.jpg",
-      "images": [
+      "detail_images": [
         "/bars/pastel-rustic/detail-1.jpg",
         "/bars/pastel-rustic/detail-2.jpg",
         "/bars/pastel-rustic/detail-3.jpg",
         "/bars/pastel-rustic/detail-4.jpg"
+      ],
+      "action_images": [
+        "/bars/pastel-rustic/in-action-1.jpg",
+        "/bars/pastel-rustic/in-action-2.jpg",
+        "/bars/pastel-rustic/in-action-3.jpg",
+        "/bars/pastel-rustic/in-action-4.jpg",
+        "/bars/pastel-rustic/in-action-5.jpg",
+        "/bars/pastel-rustic/in-action-6.jpg"
       ],
       "alt": "Pastel Rustic Mobile Cocktail Bar Hire",
       "slug": "pastel-rustic",
@@ -112,7 +148,7 @@
       "info": true,
       "thumb": "/bars/thumb/bicycle-mobile-cocktail-bar-hire-featured.webp",
       "image": "/bars/6.jpg",
-      "images": [
+      "detail_images": [
         "/bars/barcycle/detail-1.jpg",
         "/bars/barcycle/detail-2.jpg",
         "/bars/barcycle/detail-3.jpg",
@@ -136,12 +172,17 @@
       "info": true,
       "thumb": "/bars/thumb/wooden-2m-mobile-cocktail-bar-hire-featured.webp",
       "image": "/bars/7.jpg",
-      "images": [
+      "detail_images": [
         "/bars/rustic-led-2m/detail-1.jpg",
         "/bars/rustic-led-2m/detail-2.jpg",
         "/bars/rustic-led-2m/detail-3.jpg",
         "/bars/rustic-led-2m/detail-4.jpg",
         "/bars/rustic-led-2m/detail-5.jpg"
+      ],
+      "action_images": [
+        "/bars/rustic-led-2m/in-action-1.jpg",
+        "/bars/rustic-led-2m/in-action-2.jpg",
+        "/bars/rustic-led-2m/in-action-3.jpg"
       ],
       "alt": "Rustic LED 2m Mobile Cocktail Bar Hire",
       "slug": "rustic-led-2m",
@@ -160,11 +201,25 @@
       "info": false,
       "thumb": "/bars/thumb/white-led-mobile-cocktail-bar-hire-featured.gif",
       "image": "/bars/8.gif",
-      "images": [
+      "detail_images": [
         "/bars/led-white/detail-1.jpg",
         "/bars/led-white/detail-2.jpg",
         "/bars/led-white/detail-3.jpg",
         "/bars/led-white/detail-4.jpg"
+      ],
+      "action_images": [
+        "/bars/led-white/in-action-1.jpg",
+        "/bars/led-white/in-action-2.jpg",
+        "/bars/led-white/in-action-3.jpg",
+        "/bars/led-white/in-action-4.jpg",
+        "/bars/led-white/in-action-5.jpg",
+        "/bars/led-white/in-action-6.jpg",
+        "/bars/led-white/in-action-7.jpg",
+        "/bars/led-white/in-action-8.jpg",
+        "/bars/led-white/in-action-9.jpg",
+        "/bars/led-white/in-action-10.jpg",
+        "/bars/led-white/in-action-11.jpg",
+        "/bars/led-white/in-action-12.jpg"
       ],
       "alt": "Multicolour White Mobile Cocktail Bar Hire",
       "slug": "multicolour-led-white",

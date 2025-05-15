@@ -14,6 +14,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import Badge from '@/components/common/Badge';
+import Masonry from 'react-masonry-css';
+import 'photoswipe/dist/photoswipe.css';
+import { Gallery, Item } from 'react-photoswipe-gallery';
 
 
 export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -73,7 +76,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       {/* About + 이미지 슬라이더 좌우 배치 */}
       <section className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row gap-12 items-center">
         {/* 왼쪽: 이미지 슬라이더 */}
-        {bar.images && bar.images.length > 0 && (
+        {bar.detail_images && bar.detail_images.length > 0 && (
           <div className="w-full md:w-1/2">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -85,7 +88,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
               autoplay={{ delay: 3500, disableOnInteraction: false }}
               className="bar-detail-swiper"
             >
-              {bar.images.map((img, idx) => (
+              {bar.detail_images.map((img, idx) => (
                 <SwiperSlide key={idx}>
                   <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden">
                     <Image
@@ -221,6 +224,45 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
         </div>
       </section>
 
+      {/* Action Images Masonry Grid with PhotoSwipe Gallery */}
+      {bar.action_images && bar.action_images.length > 0 && (
+        <section className="max-w-6xl mx-auto py-12 px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
+            See Our Bars In Action
+          </h2>
+          <Gallery>
+            <Masonry
+              breakpointCols={{ default: 3, 1100: 2, 700: 1 }}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
+              {bar.action_images.map((img, idx) => (
+                <div key={idx} className="mb-6">
+                  <Item
+                    original={img}
+                    thumbnail={img}
+                    width="1200"
+                    height="900"
+                  >
+                    {({ ref, open }) => (
+                      <img
+                        ref={ref as unknown as React.MutableRefObject<HTMLImageElement>}
+                        onClick={open}
+                        src={img}
+                        alt={`${bar.name} in action ${idx + 1}`}
+                        className="rounded-lg shadow object-cover w-full cursor-pointer"
+                        style={{ maxWidth: '100%', height: 'auto' }}
+                        loading="lazy"
+                      />
+                    )}
+                  </Item>
+                </div>
+              ))}
+            </Masonry>
+          </Gallery>
+        </section>
+      )}
+
       {/* How big */}
       {bar.inventory && bar.inventory >= 4 && (
         <section className="max-w-5xl mx-auto py-16 px-4 text-center">
@@ -228,7 +270,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
           <p className="mb-4 text-lg text-gray-100">
             We offer White Mobile Cocktail Bar Hire in four LED colours, 150cm-wide, perfect for{' '}
             <a href="#" className="underline">weddings</a>, <a href="#" className="underline">corporate events</a>, or <a href="#" className="underline">private parties</a>.
-            Stylish and versatile, these bars are easy to set up and can be customised to match your event’s theme.
+            Stylish and versatile, these bars are easy to set up and can be customised to match your event's theme.
             <a href="#" className="underline ml-1">Contact us</a> to secure these bars for your upcoming event!
           </p>
           <p className="mb-8 text-base text-gray-100">
