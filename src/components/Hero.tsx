@@ -64,19 +64,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex items-center justify-center space-x-4"
           >
-            <Button2
-              href="/contact"
-              text="Get a Quote Now"
-            />
-
             <Button
               href="/contact"
               text="Get a Quote"
-            />
-
-            <Button3
-              href="/contact"
-              text="Get a Quote Now"
             />
           </motion.div>
         </div>
