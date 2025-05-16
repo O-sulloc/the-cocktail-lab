@@ -236,7 +236,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       {/* Action Images Masonry Grid with PhotoSwipe Gallery */}
       {bar.action_images && bar.action_images.length > 0 && (
         <section className="max-w-6xl mx-auto py-12 px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center" style={{ fontFamily: 'Caviar Dreams' }}>
             See Our Bars In Action
           </h2>
           <Gallery>
@@ -311,7 +311,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       {relatedBars.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-white">Related Products</h2>
+            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: 'Caviar Dreams' }}>Related Products</h2>
             <UnderlineButton href="/bars">View All</UnderlineButton>
           </div>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
