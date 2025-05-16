@@ -65,7 +65,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 md:flex-shrink-0 flex-1 md:flex-1 flex justify-center md:justify-start">
               <Link href="/" className="flex items-center">
                 <div className="w-[200px] flex items-center justify-center h-20">
                 {isScrolled || isMobileMenuOpen ? (
@@ -73,7 +73,7 @@ const Navbar = () => {
                     The Cocktail Lab
                   </span>
                 ) : (
-                  <div className="relative h-28 w-48 mt-10">
+                  <div className="relative mt-10 w-32 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 lg:w-48 lg:h-32">
                     <Image
                       src="/The-Cocktail-Lab-Logo.svg"
                       alt="The Cocktail Lab"
