@@ -75,7 +75,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       </section>
 
       {/* About + 이미지 슬라이더 좌우 배치 */}
-      <section className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row gap-12 items-center">
+      <section className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row gap-12">
         {/* 왼쪽: 이미지 슬라이더 */}
         {bar.detail_images && bar.detail_images.length > 0 && (
           <div className="w-full md:w-1/2">
