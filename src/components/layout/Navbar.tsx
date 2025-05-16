@@ -62,139 +62,137 @@ const Navbar = () => {
           top: '2.5rem', // Match Banner's height (40px = 2.5rem)
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex-shrink-0 md:flex-shrink-0 flex-1 md:flex-1 flex justify-center md:justify-start">
-              <Link href="/" className="flex items-center">
-                <div className="w-[200px] flex items-center justify-center h-20">
-                {isScrolled || isMobileMenuOpen ? (
-                    <span className="text-2xl font-bold text-white whitespace-nowrap" style={{ fontFamily: 'Caviar Dreams' }}>
-                    The Cocktail Lab
-                  </span>
-                ) : (
-                  <div className="relative mt-10 w-32 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 lg:w-48 lg:h-32">
-                    <Image
-                      src="/The-Cocktail-Lab-Logo.svg"
-                      alt="The Cocktail Lab"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-6">
+          {/* Logo */}
+          <div className="flex-shrink-0 md:flex-shrink-0 flex-1 md:flex-1 flex justify-center md:justify-start">
+            <Link href="/" className="flex items-center">
+              <div className="w-[200px] flex items-center justify-center h-20">
+              {isScrolled || isMobileMenuOpen ? (
+                  <span className="text-2xl font-bold text-white whitespace-nowrap" style={{ fontFamily: 'Caviar Dreams' }}>
+                  The Cocktail Lab
+                </span>
+              ) : (
+                <div className="relative mt-10 w-32 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 lg:w-48 lg:h-32">
+                  <Image
+                    src="/The-Cocktail-Lab-Logo.svg"
+                    alt="The Cocktail Lab"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              )}
+              </div>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <div
+                key={link.name}
+                className="relative group"
+                onMouseEnter={() => link.dropdownItems && setActiveDropdown(link.name)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <div className="flex items-center space-x-1 py-2">
+                  {link.href ? (
+                    <Link
+                      href={link.href}
+                      className="relative text-white text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
+                    >
+                      <span className="relative">
+                        {link.name}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
+                      </span>
+                    </Link>
+                  ) : (
+                    <span className="relative text-white text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200 cursor-pointer">
+                      <span className="relative">
+                        {link.name}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
+                      </span>
+                    </span>
+                  )}
+                  {link.dropdownItems && (
+                    <svg
+                      className={`w-4 h-4 transition-all duration-200 text-white group-hover:text-emerald-600 ${
+                        activeDropdown === link.name ? 'rotate-180' : ''
+                      }`}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
+                </div>
+                {link.dropdownItems && activeDropdown === link.name && (
+                  <div className="absolute left-0 mt-1 w-64 bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <div className="py-1">
+                      {link.dropdownItems.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="block px-4 py-2.5 text-[14px] text-white hover:text-emerald-600 transition-colors duration-200"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
-                </div>
-              </Link>
-            </div>
+              </div>
+            ))}
+          </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <div
-                  key={link.name}
-                  className="relative group"
-                  onMouseEnter={() => link.dropdownItems && setActiveDropdown(link.name)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <div className="flex items-center space-x-1 py-2">
-                    {link.href ? (
-                      <Link
-                        href={link.href}
-                        className="relative text-white text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200"
-                      >
-                        <span className="relative">
-                          {link.name}
-                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
-                        </span>
-                      </Link>
-                    ) : (
-                      <span className="relative text-white text-[15px] font-bold group-hover:text-emerald-600 transition-colors duration-200 cursor-pointer">
-                        <span className="relative">
-                          {link.name}
-                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-200" />
-                        </span>
-                      </span>
-                    )}
-                    {link.dropdownItems && (
-                      <svg
-                        className={`w-4 h-4 transition-all duration-200 text-white group-hover:text-emerald-600 ${
-                          activeDropdown === link.name ? 'rotate-180' : ''
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    )}
-                  </div>
-                  {link.dropdownItems && activeDropdown === link.name && (
-                    <div className="absolute left-0 mt-1 w-64 bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                      <div className="py-1">
-                        {link.dropdownItems.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block px-4 py-2.5 text-[14px] text-white hover:text-emerald-600 transition-colors duration-200"
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+          {/* Social Media Icons - Desktop Only */}
+          <div className="hidden md:flex items-center space-x-4">
+            <SocialIcons />
+          </div>
 
-            {/* Social Media Icons - Desktop Only */}
-            <div className="hidden md:flex items-center">
-              <SocialIcons />
-            </div>
+          {/* CTA Button - Desktop */}
+          <div className="hidden md:flex items-center">
+            <Button2
+              text="Get a Quote Now"
+              href="contact"
+            />
+          </div>
 
-            {/* CTA Button - Desktop */}
-            <div className="hidden md:flex items-center space-x-4">
-              <Button2
-                text="Get a Quote Now"
-                href="contact"
-              />
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white hover:text-gray-200 focus:outline-none"
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-white hover:text-gray-200 focus:outline-none"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {isMobileMenuOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  )}
-                </svg>
-              </button>
-            </div>
+                {isMobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
@@ -220,6 +218,7 @@ const Navbar = () => {
               {link.href ? (
                 <Link
                   href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="block px-3 py-2 text-gray-200 hover:text-white hover:bg-gray-800 rounded-md"
                 >
                   {link.name}
@@ -235,6 +234,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       className="block px-3 py-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-md"
                     >
                       {item.name}
