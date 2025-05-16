@@ -17,6 +17,7 @@ import Badge from '@/components/common/Badge';
 import Masonry from 'react-masonry-css';
 import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import Button from '@/components/common/Button';
 
 
 export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -221,6 +222,14 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
               </span>
             </div>
           )}
+
+          {/* Button */}
+          <div className="mt-8">
+            <Button 
+              href="/contact"
+              text="Get a Quote"
+            />
+          </div>
         </div>
       </section>
 
