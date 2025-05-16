@@ -3,8 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Button from './common/Button';
-import Button2 from './common/Button2';
-import Button3 from './common/Button3';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
