@@ -172,52 +172,52 @@ const Options = () => {
   ];
 
   return (
-    <section className="py-24">
+    <section className="py-12 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Caviar Dreams' }}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Caviar Dreams' }}
           >
             Our Cocktail & Mocktail Packages
           </motion.h2>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative bg-[#12141D] rounded-2xl p-8 ${
+              className={`relative bg-[#12141D] rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 ${
                 plan.isRecommended ? 'ring-1 ring-emerald-600' : ''
               }`}
             >
               {plan.isRecommended && (
                 <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2">
-                  <span className="bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-emerald-600 text-white px-3 py-0.5 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-medium">
                     Recommended
                   </span>
                 </div>
               )}
               
-              <h3 className="text-2xl font-semibold text-emerald-600 mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-emerald-600 mb-3 md:mb-4">
                 {plan.name}
               </h3>
               
-              <div className="text-base text-white mb-8 h-auto md:h-[200px]">
+              <div className="text-sm sm:text-base text-white mb-6 md:mb-8 min-h-[120px] md:min-h-[200px]">
                 {plan.description}
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 md:mb-8">
                 {plan.features.map((feature) => (
-                  <div key={getTooltipId(plan.name, feature)} className="flex items-center text-white text-base">
-                    <div className="mr-4 flex-shrink-0">
+                  <div key={getTooltipId(plan.name, feature)} className="flex items-center text-white text-sm sm:text-base">
+                    <div className="mr-3 sm:mr-4 flex-shrink-0">
                       {getIconForFeature(feature)}
                     </div>
                     <span>{feature}</span>
