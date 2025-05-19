@@ -1,72 +1,152 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import chooseContent from '../content/choose.json';
-import UnderlineButton from '@/components/common/UnderlineButton';
+import { motion, useMotionValue, animate } from 'framer-motion';
+import Button3 from './common/Button3';
+
+function AnimatedNumber({ value, duration = 1.2 }: { value: string | number, duration?: number }) {
+  const count = useMotionValue(0);
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    const numericValue = typeof value === 'string' ? parseInt(value.replace(/[^\d]/g, '')) : value;
+    const controls = animate(count, numericValue, {
+      duration,
+      onUpdate: v => setDisplay(Math.floor(v)),
+    });
+    return controls.stop;
+  }, [value, count, duration]);
+
+  return <span>{display.toLocaleString()}</span>;
+}
 
 const Choose = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const steps = chooseContent.steps;
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Best practice: scroll event로 중앙에 가장 가까운 섹션만 active
+  useEffect(() => {
+    const onScroll = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let minDiff = Infinity;
+      let newActive = 0;
+      sectionRefs.current.forEach((ref, idx) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          const sectionCenter = rect.top + rect.height / 2;
+          const diff = Math.abs(viewportCenter - sectionCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            newActive = idx;
+          }
+        }
+      });
+      setActiveIdx(newActive);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <section className="max-w-7xl mx-auto">
-      <div className="flex flex-col lg:flex-row min-h-screen">
-        {/* Sticky left section */}
-        <motion.aside 
-          className="lg:w-2/5 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] p-6 lg:p-8 flex flex-col items-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+    <section className="relative py-28 min-h-[80vh] bg-[#f9fffa] rounded-[80px]">
+      {/* Section Title */}
+      {/* 반응형 사이즈 조절 */}
+      {/* <div className="text-center mb-50 mt-20"> */}
+      <div className="text-center mb-8 md:mb-16 lg:mb-24 xl:mb-32 mt-8 md:mt-12 lg:mt-20 xl:mt-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4" style={{ fontFamily: 'Caviar Dreams' }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6" style={{ fontFamily: 'Caviar Dreams' }}>
-            {chooseContent.title}
-          </h2>
-          <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-            <Image
-              src="/the-cocktail-lab-experience.jpg"
-              alt="Cocktail making"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+          Why Choose Us
+        </motion.h2>
+        <p className="text-lg text-[#075539] max-w-2xl mx-auto">
+          {/* 필요하다면 부제목/설명 추가 가능 */}
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 데스크탑/태블릿: scroll-telling */}
+        <div className="hidden md:flex flex-row gap-16 min-h-[80vh]">
+          {/* left: sticky image, always vertically centered */}
+          <div className="md:w-1/2 flex justify-center items-start">
+            <div className="sticky top-60 flex items-center justify-center h-[60vh] w-full max-w-[100%]">
+              <div className="w-full h-full flex items-center justify-center">
+                <Image
+                  src={steps[activeIdx].image}
+                  alt={steps[activeIdx].title}
+                  fill
+                  className="object-contain hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </div>
           </div>
-          <Link 
-            href="/experience"
-            className="mt-6 lg:mt-8 px-4 lg:px-6 py-2.5 lg:py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors w-3/4 text-sm lg:text-base text-center"
-          >
-            The Cocktail Lab Experience
-          </Link>
-        </motion.aside>
-
-        {/* Scrolling right section */}
-        <div className="lg:w-3/5 p-6 lg:p-8">
-          <div className="space-y-16 md:space-y-24 lg:space-y-32 py-16 md:py-24 lg:py-32">
-            {chooseContent.steps.map((step) => (
-              <motion.article
-                key={step.number}
-                className="flex items-start gap-4 lg:gap-8 relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true, margin: "-20%" }}
+          {/* right: text scroll area */}
+          <div className="md:w-1/2 flex flex-col gap-32">
+            {steps.map((step, idx) => (
+              <div
+                ref={el => { sectionRefs.current[idx] = el; }}
+                key={step.title + (step.subtitle || '')}
+                className="min-h-[60vh] flex flex-col justify-center"
               >
-                <div className="flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center">
-                  <span className="text-white text-base lg:text-lg font-medium">{step.number}</span>
-                </div>
-
-                <div className="flex-1 bg-white/[0.2] rounded-xl lg:rounded-2xl p-5 lg:p-8 backdrop-blur-sm">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-3 lg:mb-4">{step.title}</h3>
-                  <p className="text-gray-400 text-sm md:text-base lg:text-lg">{step.description}</p>
-                  {step.number === "2" && (
-                    <UnderlineButton href="/testimonials">Read All Testimonials</UnderlineButton>
-                  )}
-                </div>
-              </motion.article>
+                {/* 숫자 카운터 + 서브타이틀 */}
+                {step.subtitle ? (
+                  <div className="flex items-end gap-2 mb-2">
+                    <span className="text-5xl md:text-6xl font-extrabold text-[#0B6B4D]" style={{ fontFamily: 'Caviar Dreams' }}>
+                      <AnimatedNumber value={step.title} />
+                    </span>
+                    <span className="text-xl md:text-2xl font-bold text-[#0B6B4D]" style={{ fontFamily: 'Caviar Dreams' }}>{step.subtitle}</span>
+                  </div>
+                ) : (
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#0B6B4D] mb-4" style={{ fontFamily: 'Caviar Dreams' }}>{step.title}</h3>
+                )}
+                <p className="text-lg text-[#075539] mb-6">{step.description}</p>
+              </div>
             ))}
           </div>
         </div>
+
+        {/* 모바일: 세로 스택 */}
+        <div className="flex flex-col gap-12 md:hidden">
+          {steps.map((step) => (
+            <div key={step.title + (step.subtitle || '')} className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4">
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+              {step.subtitle ? (
+                <div className="flex items-end gap-2 mb-2">
+                  <span className="text-4xl font-extrabold text-[#0B6B4D]" style={{ fontFamily: 'Caviar Dreams' }}>
+                    <AnimatedNumber value={step.title} />
+                  </span>
+                  <span className="text-lg font-bold text-[#0B6B4D]" style={{ fontFamily: 'Caviar Dreams' }}>{step.subtitle}</span>
+                </div>
+              ) : (
+                <h3 className="text-xl font-bold text-[#0B6B4D] mb-2" style={{ fontFamily: 'Caviar Dreams' }}>{step.title}</h3>
+              )}
+              <p className="text-base text-[#075539]">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-40">
+        <Button3 text="Learn more" href="£" />
       </div>
     </section>
   );
 };
 
-export default Choose; 
+export default Choose;

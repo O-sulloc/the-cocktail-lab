@@ -2,24 +2,26 @@
   "title": "Why Choose Us",
   "steps": [
     {
-      "number": "1",
-      "title": "Experience 20 years of cocktails",
-      "description": "Professional & Experienced With over 20 years' experience across London's leading hotels and restaurants we provide a professional service from start to finish."
+      "title": "20",
+      "subtitle": "Years of Cocktails Experience",
+      "description": "Professional & Experienced With over 20 years’ experience across London’s leading hotels and restaurants we provide a professional service from start to finish.",
+      "image": "/choose-the-cocktail-lab-1.jpg"
     },
     {
-      "number": "2",
-      "title": "Reliable ★★★★★ Over 205 reviews",
-      "description": "Our attention to detail, bespoke service, and expertise combine to ensure we help create a smooth-running event, serving world class cocktails for you and your guests to enjoy."
+      "title": "215",
+      "subtitle": "★★★★★ Reviews",
+      "description": "Our attention to detail, bespoke service, and expertise combine to ensure we help create a smooth-running event, serving world class cocktails for you and your guests to enjoy.",
+      "image": "/choose-the-cocktail-lab-2.jpg"
     },
     {
-      "number": "3",
       "title": "Our Promise",
-      "description": "We always aim to add the wow factor. Our talented and friendly mixologists will make sure your guests are still talking about your event long after the drinks have stopped pouring."
+      "description": "We always aim to add the wow factor. Our talented and friendly mixologists will make sure your guests are still talking about your event long after the drinks have stopped pouring.",
+      "image": "/choose-the-cocktail-lab-3.jpg"
     },
     {
-      "number": "4",
       "title": "The Extra Touch",
-      "description": "The only cocktail bar hire company in London to offer a complementary cocktail tasting session, at our specially designed bar, to help you make those all-important menu choices."
+      "description": "The only cocktail bar hire company in London to offer a complementary cocktail tasting session, at our specially designed bar, to help you make those all-important menu choices.",
+      "image": "/choose-the-cocktail-lab-4.jpg"
     }
   ]
 } 
