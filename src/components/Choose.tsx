@@ -5,6 +5,7 @@ import Image from 'next/image';
 import chooseContent from '../content/choose.json';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import Button3 from './common/Button3';
+import UnderlineButton from './common/UnderlineButton';
 
 function AnimatedNumber({ value, duration = 1.2 }: { value: string | number, duration?: number }) {
   const count = useMotionValue(0);
@@ -54,8 +55,6 @@ const Choose = () => {
   return (
     <section className="relative py-28 min-h-[80vh] bg-[#f9fffa] rounded-[80px]">
       {/* Section Title */}
-      {/* 반응형 사이즈 조절 */}
-      {/* <div className="text-center mb-50 mt-20"> */}
       <div className="text-center mb-8 md:mb-16 lg:mb-24 xl:mb-32 mt-8 md:mt-12 lg:mt-20 xl:mt-24">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -65,9 +64,10 @@ const Choose = () => {
         >
           Why Choose Us
         </motion.h2>
-        <p className="text-lg text-[#075539] max-w-2xl mx-auto">
-          {/* 필요하다면 부제목/설명 추가 가능 */}
-        </p>
+        
+        {/* 필요하다면 부제목/설명 추가 가능 */}
+        {/* <p className="text-lg text-[#075539] max-w-2xl mx-auto">
+        </p> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,6 +108,10 @@ const Choose = () => {
                   <h3 className="text-2xl md:text-3xl font-bold text-[#0B6B4D] mb-4" style={{ fontFamily: 'Caviar Dreams' }}>{step.title}</h3>
                 )}
                 <p className="text-lg text-[#075539] mb-6">{step.description}</p>
+                {/* 2번째(리뷰) 섹션에만 UnderlineButton 추가 */}
+                {idx === 1 && (
+                  <UnderlineButton href="/testimonials">Read All Testimonials</UnderlineButton>
+                )}
               </div>
             ))}
           </div>
@@ -115,7 +119,7 @@ const Choose = () => {
 
         {/* 모바일: 세로 스택 */}
         <div className="flex flex-col gap-12 md:hidden">
-          {steps.map((step) => (
+          {steps.map((step, idx) => (
             <div key={step.title + (step.subtitle || '')} className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4">
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4">
                 <Image
@@ -127,22 +131,28 @@ const Choose = () => {
                 />
               </div>
               {step.subtitle ? (
-                <div className="flex items-end gap-2 mb-2">
+                <div className="flex items-end gap-2 mt-4">
                   <span className="text-4xl font-extrabold text-[#0B6B4D]" style={{ fontFamily: 'Caviar Dreams' }}>
                     <AnimatedNumber value={step.title} />
                   </span>
                   <span className="text-lg font-bold text-[#0B6B4D]" style={{ fontFamily: 'Caviar Dreams' }}>{step.subtitle}</span>
                 </div>
               ) : (
-                <h3 className="text-xl font-bold text-[#0B6B4D] mb-2" style={{ fontFamily: 'Caviar Dreams' }}>{step.title}</h3>
+                <h3 className="text-xl font-bold text-[#0B6B4D] mt-4" style={{ fontFamily: 'Caviar Dreams' }}>{step.title}</h3>
               )}
-              <p className="text-base text-[#075539]">{step.description}</p>
+              <p className="text-base text-[#075539] mt-4">{step.description}</p>
+              {/* 2번째(리뷰) 섹션에만 UnderlineButton 추가*/}
+              {idx === 1 && (
+                <UnderlineButton href="/testimonials" className='mt-4'>
+                  Read All Testimonials
+                </UnderlineButton>
+              )}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex justify-center mt-40">
+      <div className="flex justify-center mt-20">
         <Button3 text="Learn more" href="£" />
       </div>
     </section>
