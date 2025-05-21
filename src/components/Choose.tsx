@@ -6,21 +6,25 @@ import chooseContent from '../content/choose.json';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import Button3 from './common/Button3';
 import UnderlineButton from './common/UnderlineButton';
+import { useInView } from 'react-intersection-observer';
 
 function AnimatedNumber({ value, duration = 1.2 }: { value: string | number, duration?: number }) {
   const count = useMotionValue(0);
   const [display, setDisplay] = useState(0);
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
-    const numericValue = typeof value === 'string' ? parseInt(value.replace(/[^\d]/g, '')) : value;
-    const controls = animate(count, numericValue, {
-      duration,
-      onUpdate: v => setDisplay(Math.floor(v)),
-    });
-    return controls.stop;
-  }, [value, count, duration]);
+    if (inView) {
+      const numericValue = typeof value === 'string' ? parseInt(value.replace(/[^\d]/g, '')) : value;
+      const controls = animate(count, numericValue, {
+        duration,
+        onUpdate: v => setDisplay(Math.floor(v)),
+      });
+      return controls.stop;
+    }
+  }, [inView, value, count, duration]);
 
-  return <span>{display.toLocaleString()}</span>;
+  return <span ref={ref}>{display.toLocaleString()}</span>;
 }
 
 const Choose = () => {
