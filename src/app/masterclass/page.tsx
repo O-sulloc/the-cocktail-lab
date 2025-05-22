@@ -1,25 +1,25 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useHorizontalScroll } from '@/hooks/useHorizontalScroll'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import masterclassData from '@/content/masterclass.json'
-// import carAnimation from '@/lottie/car.json'
-// import mixAnimation from '@/lottie/mix.json'
-// import cocktailAnimation from '@/lottie/cocktail.json'
-// import cartAnimation from '@/lottie/cart.json'
-// import teamAnimation from '@/lottie/team.json'
-// import sessionAnimation from '@/lottie/session.json'
+import carAnimation from '@/lottie/car.json'
+import mixAnimation from '@/lottie/mix.json'
+import cocktailAnimation from '@/lottie/cocktail.json'
+import cartAnimation from '@/lottie/cart.json'
+import teamAnimation from '@/lottie/team.json'
+import sessionAnimation from '@/lottie/session.json'
 import Masonry from 'react-masonry-css';
 import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import masterclassImages from '@/content/masterclassImages'
 import Button from '@/components/common/Button/Button'
 import ArrowButton from '@/components/common/Button/ArrowButton'
-// import Lottie from 'react-lottie-player'
+import Lottie from 'react-lottie-player'
 
 const cocktails = [
   { name: 'Mojito', image: '/masterclass/masterclass-cocktail-1.jpg', desc: 'A refreshing blend of rum, mint, lime, and soda.' },
@@ -91,59 +91,14 @@ const Card = ({ step }: { step: CardStep }) => (
   </div>
 )
 
-// How It Works Section
-const HowItWorksSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
-  const wrapperRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
-
-  const { initScrollAnimation, cleanupScrollAnimation } = useHorizontalScroll({
-    sectionRef,
-    wrapperRef,
-  })
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger)
-      // Only run GSAP animation on desktop
-      if (window.innerWidth >= 768) {
-        initScrollAnimation()
-        return cleanupScrollAnimation
-      }
-    }
-  }, [initScrollAnimation, cleanupScrollAnimation])
-
-  return (
-    <section ref={sectionRef} className="w-full py-20 relative">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
-        How It Works
-      </h2>
-      <div className="overflow-hidden">
-        <div 
-          ref={wrapperRef}
-          className="flex flex-col md:flex-row py-20 mt-10 px-4 md:px-0"
-          style={{
-            transform: 'translateX(0%)',
-            willChange: 'transform'
-          }}
-        >
-          {cocktailSteps.map((step) => (
-            <Card key={step.id} step={step} />
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+const lottieMap: { [key: string]: any } = {
+  car: carAnimation,
+  mix: mixAnimation,
+  cocktail: cocktailAnimation,
+  cart: cartAnimation,
+  team: teamAnimation,
+  session: sessionAnimation,
 }
-
-// const lottieMap: { [key: string]: any } = {
-//   car: carAnimation,
-//   mix: mixAnimation,
-//   cocktail: cocktailAnimation,
-//   cart: cartAnimation,
-//   team: teamAnimation,
-//   session: sessionAnimation,
-// };
-
 export default function Masterclass() {
   const INITIAL_COUNT = 9;
   const LOAD_COUNT = 9;
@@ -218,7 +173,6 @@ export default function Masterclass() {
       </section>
 
       {/* How It Works Section */}
-      <HowItWorksSection />
 
       {/* See in action */}
       <section className="max-w-6xl mx-auto py-12 px-4">
