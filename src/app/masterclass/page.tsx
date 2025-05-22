@@ -7,12 +7,12 @@ import { useHorizontalScroll } from '@/hooks/useHorizontalScroll'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import masterclassData from '@/content/masterclass.json'
-import carAnimation from '@/lottie/car.json'
-import mixAnimation from '@/lottie/mix.json'
-import cocktailAnimation from '@/lottie/cocktail.json'
-import cartAnimation from '@/lottie/cart.json'
-import teamAnimation from '@/lottie/team.json'
-import sessionAnimation from '@/lottie/session.json'
+// import carAnimation from '@/lottie/car.json'
+// import mixAnimation from '@/lottie/mix.json'
+// import cocktailAnimation from '@/lottie/cocktail.json'
+// import cartAnimation from '@/lottie/cart.json'
+// import teamAnimation from '@/lottie/team.json'
+// import sessionAnimation from '@/lottie/session.json'
 import Masonry from 'react-masonry-css';
 import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
@@ -135,14 +135,14 @@ const HowItWorksSection = () => {
   )
 }
 
-const lottieMap: { [key: string]: any } = {
-  car: carAnimation,
-  mix: mixAnimation,
-  cocktail: cocktailAnimation,
-  cart: cartAnimation,
-  team: teamAnimation,
-  session: sessionAnimation,
-};
+// const lottieMap: { [key: string]: any } = {
+//   car: carAnimation,
+//   mix: mixAnimation,
+//   cocktail: cocktailAnimation,
+//   cart: cartAnimation,
+//   team: teamAnimation,
+//   session: sessionAnimation,
+// };
 
 export default function Masterclass() {
   const INITIAL_COUNT = 9;
