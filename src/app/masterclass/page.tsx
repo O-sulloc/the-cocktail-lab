@@ -1,9 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState, useCallback } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { useHorizontalScroll } from '@/hooks/useHorizontalScroll'
+import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import masterclassData from '@/content/masterclass.json'
@@ -156,12 +153,12 @@ export default function Masterclass() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="w-24 h-24 mb-6">
-                {/* <Lottie
+                <Lottie
                   key={item.title} // 또는 key={i}
                   animationData={lottieMap[item.image]}
                   loop={true}
                   play
-                /> */}
+                />
               </div>
               <h4 className="text-xl md:text-2xl font-extrabold text-[#184C36] text-center mb-3">{item.title}</h4>
               <p className="text-black text-center text-base md:text-lg">
