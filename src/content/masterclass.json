@@ -1,0 +1,34 @@
+{
+  "introduce": [
+    {
+      "title": "We Come to You",
+      "desc": "Our professional mixologists will set up at your chosen venue.",
+      "image": "car"
+    },
+    {
+      "title": "Dedicated Mixologist",
+      "desc": "1 mixologist is assigned per 10–15 guests, ensuring a fully personalised experience.",
+      "image": "mix"
+    },
+    {
+      "title": "2 Cocktails per Bar Station",
+      "desc": "Each bar station includes 2 signature cocktails — learn, mix, and enjoy.",
+      "image": "cocktail"
+    },
+    {
+      "title": "Hands-On Session (35–40 min per cocktail)",
+      "desc": "Step-by-step guidance with plenty of time to shake, stir, and sip.",
+      "image": "session"
+    },
+    {
+      "title": "Everything Provided",
+      "desc": "Rest assured, we provide all the spirits, fresh ingredients, and top-notch equipment on the day, so you can craft the perfect cocktail with ease!",
+      "image": "cart"
+    },
+    {
+      "title": "Perfect for Every Event",
+      "desc": "team-building activity, unique celebration, or get-together with friends — we bring the cocktails, you bring the fun.",
+      "image": "team"
+    }
+  ]
+}
