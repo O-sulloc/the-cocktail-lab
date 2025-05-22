@@ -27,68 +27,68 @@ const cocktails = [
 
 
 // Types
-interface CardStep {
-  id: number
-  title: string
-  description: string
-  color: string
-}
+// interface CardStep {
+//   id: number
+//   title: string
+//   description: string
+//   color: string
+// }
 
 // Data
-const cocktailSteps: CardStep[] = [
-  {
-    id: 1,
-    title: "Cocktail Origins",
-    description: "A brief history on the cocktails of your choice",
-    color: "#FE4A49"
-  },
-  {
-    id: 2,
-    title: "Behind the Bar Basics",
-    description: "Introduction to bar tools + tips and manners behind the bar",
-    color: "#2AB7CA"
-  },
-  {
-    id: 3,
-    title: "Live Demo by the Pros",
-    description: "Watch our mixologists create each cocktail step-by-step so you&apos;re ready to shake it yourself.",
-    color: "#F86624"
-  },
-  {
-    id: 4,
-    title: "Your Turn to Shake",
-    description: "Now it&apos;s your time to shine — every guest will create their own cocktail using premium ingredients and equipment.",
-    color: "#7E6B8F"
-  },
-  {
-    id: 5,
-    title: "Let the Games Begin!",
-    description: "Competition time! It&apos;s optional, but did we mention there&apos;s a prize at stake?",
-    color: "#4CB944"
-  }
-]
+// const cocktailSteps: CardStep[] = [
+//   {
+//     id: 1,
+//     title: "Cocktail Origins",
+//     description: "A brief history on the cocktails of your choice",
+//     color: "#FE4A49"
+//   },
+//   {
+//     id: 2,
+//     title: "Behind the Bar Basics",
+//     description: "Introduction to bar tools + tips and manners behind the bar",
+//     color: "#2AB7CA"
+//   },
+//   {
+//     id: 3,
+//     title: "Live Demo by the Pros",
+//     description: "Watch our mixologists create each cocktail step-by-step so you&apos;re ready to shake it yourself.",
+//     color: "#F86624"
+//   },
+//   {
+//     id: 4,
+//     title: "Your Turn to Shake",
+//     description: "Now it&apos;s your time to shine — every guest will create their own cocktail using premium ingredients and equipment.",
+//     color: "#7E6B8F"
+//   },
+//   {
+//     id: 5,
+//     title: "Let the Games Begin!",
+//     description: "Competition time! It&apos;s optional, but did we mention there&apos;s a prize at stake?",
+//     color: "#4CB944"
+//   }
+// ]
 
 // Card Component
-const Card = ({ step }: { step: CardStep }) => (
-  <div 
-    className="card min-w-full sm:min-w-[350px] md:min-w-[400px] lg:min-w-[500px] xl:min-w-[600px] h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] xl:h-[400px] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between relative transform transition-transform hover:scale-[1.02] mb-6 last:mb-0 md:mb-0 md:mx-8"
-    style={{ 
-      backgroundColor: step.color
-    }}
-    role="article"
-    aria-label={`Step ${step.id}: ${step.title}`}
-  >
-    <div className="card-content relative z-10">
-      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">{step.title}</h3>
-      <p className="text-base sm:text-lg md:text-xl text-white/90">{step.description}</p>
-    </div>
-    <div className="step-number absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white/20">
-      {String(step.id).padStart(2, '0')}
-    </div>
-  </div>
-)
+// const Card = ({ step }: { step: CardStep }) => (
+//   <div 
+//     className="card min-w-full sm:min-w-[350px] md:min-w-[400px] lg:min-w-[500px] xl:min-w-[600px] h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] xl:h-[400px] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between relative transform transition-transform hover:scale-[1.02] mb-6 last:mb-0 md:mb-0 md:mx-8"
+//     style={{ 
+//       backgroundColor: step.color
+//     }}
+//     role="article"
+//     aria-label={`Step ${step.id}: ${step.title}`}
+//   >
+//     <div className="card-content relative z-10">
+//       <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">{step.title}</h3>
+//       <p className="text-base sm:text-lg md:text-xl text-white/90">{step.description}</p>
+//     </div>
+//     <div className="step-number absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white/20">
+//       {String(step.id).padStart(2, '0')}
+//     </div>
+//   </div>
+// )
 
-const lottieMap: { [key: string]: any } = {
+const lottieMap: { [key: string]: object } = {
   car: carAnimation,
   mix: mixAnimation,
   cocktail: cocktailAnimation,
