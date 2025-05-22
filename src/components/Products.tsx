@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Button from './common/Button';
+import ArrowButton from './common/Button/ArrowButton';
 import productsContent from '../content/products.json';
 import { ProductsContent } from '../types/products';
 
@@ -38,7 +38,7 @@ const Products = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button 
+              <ArrowButton 
                 href="contact"
                 text="Get a Quote"
               />

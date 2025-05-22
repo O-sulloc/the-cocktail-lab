@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import type { Bar } from '@/types/bars';
 import InfoIcon from '@/components/common/Tooltip/InfoIcon';
-import Button from '@/components/common/Button';
+import ArrowButton from './common/Button/ArrowButton';
 
 export interface BarCardProps {
   bar: Bar;
@@ -33,7 +33,7 @@ const BarCard = ({ bar, isHoverDevice, activeTooltip, setActiveTooltip, getToolt
 
         {/* Button - Moved to bottom */}
         <div className="absolute bottom-6 left-0 right-0 flex justify-center">
-          <Button
+          <ArrowButton
             text="Check Availability"
             href={`/bars/${bar.slug}`}
             className="z-20"

@@ -7,7 +7,7 @@ interface ButtonProps {
   className?: string;  // Optional: Allow additional custom classes
 }
 
-const Button = ({ text, href, className = '' }: ButtonProps) => {
+const ArrowButton = ({ text, href, className = '' }: ButtonProps) => {
   return (
     <Link
       href={href}
@@ -38,4 +38,4 @@ const Button = ({ text, href, className = '' }: ButtonProps) => {
   );
 };
 
-export default Button; 
+export default ArrowButton;

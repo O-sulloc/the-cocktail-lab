@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Button from './common/Button';
+import ArrowButton from './common/Button/ArrowButton';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,7 +62,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex items-center justify-center space-x-4"
           >
-            <Button
+            <ArrowButton
               href="/contact"
               text="Get a Quote"
             />

@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import chooseContent from '../content/choose.json';
 import { motion, useMotionValue, animate } from 'framer-motion';
-import Button3 from './common/Button3';
-import UnderlineButton from './common/UnderlineButton';
+import Button from '@/components/common/Button/Button'
+import UnderlineButton from './common/Button/UnderlineButton';
 import { useInView } from 'react-intersection-observer';
 
 function AnimatedNumber({ value, duration = 1.2 }: { value: string | number, duration?: number }) {
@@ -157,7 +157,12 @@ const Choose = () => {
       </div>
 
       <div className="flex justify-center mt-20">
-        <Button3 text="Learn more" href="£" />
+      <Button 
+        text='Learn More'
+        href=''
+        variant='secondary'
+        size='sm'
+      />
       </div>
     </section>
   );

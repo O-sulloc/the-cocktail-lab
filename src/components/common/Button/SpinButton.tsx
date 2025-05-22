@@ -7,7 +7,7 @@ interface ButtonProps {
   className?: string; // Optional: Allow additional custom classes
 }
 
-const Button2 = ({ text, href, className = '' }: ButtonProps) => {
+const SpinButton = ({ text, href, className = '' }: ButtonProps) => {
   return (
     <Link
       href={href}
@@ -21,4 +21,4 @@ const Button2 = ({ text, href, className = '' }: ButtonProps) => {
   );
 };
 
-export default Button2;
+export default SpinButton;

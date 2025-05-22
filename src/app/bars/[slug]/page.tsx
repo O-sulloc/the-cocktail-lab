@@ -6,7 +6,7 @@ import React, { useMemo, useState } from 'react';
 import BarCard from '@/components/BarCard';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
-import UnderlineButton from '@/components/common/UnderlineButton';
+import UnderlineButton from '@/components/common/Button/UnderlineButton';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -17,7 +17,7 @@ import Badge from '@/components/common/Badge';
 import Masonry from 'react-masonry-css';
 import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
-import Button from '@/components/common/Button';
+import ArrowButton from '@/components/common/Button/ArrowButton';
 
 
 export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -225,9 +225,9 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
 
           {/* Button */}
           <div className="mt-8">
-            <Button 
-              href="/contact"
+            <ArrowButton 
               text="Get a Quote"
+              href="/contact"
             />
           </div>
         </div>

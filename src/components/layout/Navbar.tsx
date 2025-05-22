@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Button2 from '../common/Button2';
+import SpinButton from '../common/Button/SpinButton';
 import SocialIcons from '../common/SocialIcons';
 
 const Navbar = () => {
@@ -36,7 +36,7 @@ const Navbar = () => {
         { name: 'For Corporate Events', href: '#' },
       ]
     },
-    { name: 'Masterclass', href: '#' },
+    { name: 'Masterclass', href: '/masterclass' },
     { name: 'Our Bars', href: '/bars' },
     { 
       name: 'Testimonial', 
@@ -158,7 +158,7 @@ const Navbar = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:flex items-center">
-            <Button2
+            <SpinButton
               text="Get a Quote Now"
               href="contact"
             />
@@ -255,7 +255,7 @@ const Navbar = () => {
 
           {/* CTA Button - Mobile */}
           <div className="pt-2">
-            <Button2
+            <SpinButton
               text="Get a Quote Now"
               href="contact"
               className='w-full'
