@@ -44,7 +44,7 @@ export default function Masterclass() {
   return(
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center mt-24 md:mt-48">
+      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
         {/* 배경 이미지 */}
         <Image
           src="/masterclass/the-cocktail-lab-masterclass-in-action-5.jpg"
@@ -117,6 +117,7 @@ export default function Masterclass() {
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
+            loop={true}
             navigation
             pagination={{ clickable: true }}
             autoplay={{
@@ -147,9 +148,6 @@ export default function Masterclass() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
           Client Favorites
         </h2>
-        <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-300">
-          text
-        </h3>
         <p className="text-lg text-gray-400 text-center px-4 max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mb-8">
           At The Cocktail Lab, we believe that the best cocktails are the ones you enjoy the most. Our expert mixologists are here to guide you through the creation of your favorite drinks, from classic concoctions like the Mojito and Pina Coladas to modern marvels like the Espresso Martini and Bramble Cocktails.
         </p>

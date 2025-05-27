@@ -4,8 +4,6 @@ interface WhiteCardProps {
   title: string;
   description: string;
   className?: string;
-  minHeight?: number | string;
-  maxHeight?: number | string;
   children?: React.ReactNode;
 }
 
@@ -13,21 +11,13 @@ const WhiteCard: React.FC<WhiteCardProps> = ({
   title,
   description,
   className = '',
-  minHeight,
-  maxHeight,
   children,
 }) => {
-  // 반응형 min/maxHeight 기본값
-  // 모바일: minHeight 220, maxHeight 320 / 데스크탑: minHeight 300, maxHeight 420
-  const defaultMinHeight = typeof window !== 'undefined' && window.innerWidth < 768 ? 220 : 300;
-  const defaultMaxHeight = typeof window !== 'undefined' && window.innerWidth < 768 ? 320 : 420;
-
+  // Remove window.innerWidth logic and use Tailwind classes instead
   return (
     <div
-      className={`bg-white rounded-[2.5rem] shadow-xl p-6 md:p-12 flex flex-col items-center justify-start ${className}`}
+      className={`bg-white rounded-[2.5rem] shadow-xl p-6 md:p-12 flex flex-col items-center justify-start min-h-[220px] md:min-h-[300px] max-h-[320px] md:max-h-[420px] ${className}`}
       style={{
-        minHeight: minHeight ?? defaultMinHeight,
-        maxHeight: maxHeight ?? defaultMaxHeight,
         width: '100%',
         height: '100%',
         boxSizing: 'border-box',

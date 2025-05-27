@@ -73,7 +73,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({
       )}
       <div
         ref={trackRef}
-        className="horizontal-scroll-track flex h-full gap-8"
+        className="horizontal-scroll-track flex h-full gap-8 px-8"
         style={{ width: `calc(${items.length} * ${typeof cardWidth === 'number' ? cardWidth + 'px' : cardWidth})` }}
       >
         {items.map((item, idx) => (
