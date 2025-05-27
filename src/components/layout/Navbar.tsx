@@ -92,14 +92,8 @@ const Navbar = () => {
               <div
                 key={link.name}
                 className="relative group"
-                onMouseEnter={() => {
-                  console.log('Mouse Enter:', link.name);
-                  link.dropdownItems && setActiveDropdown(link.name);
-                }}
-                onMouseLeave={() => {
-                  console.log('Mouse Leave:', link.name);
-                  setActiveDropdown(null);
-                }}
+                onMouseEnter={() => link.dropdownItems && setActiveDropdown(link.name)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
                 <div className="flex items-center space-x-1 py-2">
                   {link.href ? (

@@ -254,13 +254,15 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
                     height="900"
                   >
                     {({ ref, open }) => (
-                      <img
+                      <Image
                         ref={ref as unknown as React.MutableRefObject<HTMLImageElement>}
                         onClick={open}
                         src={img}
                         alt={`${bar.name} in action ${idx + 1}`}
                         className="rounded-lg shadow object-cover w-full cursor-pointer"
                         style={{ maxWidth: '100%', height: 'auto' }}
+                        width={1200}
+                        height={900}
                         loading="lazy"
                       />
                     )}
