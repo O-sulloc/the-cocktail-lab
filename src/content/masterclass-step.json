@@ -1,0 +1,29 @@
+{
+  "step":[
+    {
+      "id": "1",
+      "title": "Cocktail Origins",
+      "description": "A brief history on the cocktails of your choice"
+    },
+    {
+      "id": "2",
+      "title": "Behind the Bar Basics",
+      "description": "Introduction to bar tools + tips and manners behind the bar"
+    },
+    {
+      "id": "3",
+      "title": "Live Demo by the Pros",
+      "description": "Watch our mixologists create each cocktail step-by-step so you're ready to shake it yourself."
+    },
+    {
+      "id": "4",
+      "title": "Your Turn to Shake",
+      "description": "Now it's your time to shine — every guest will create their own cocktail using premium ingredients and equipment."
+    },
+    {
+      "id": "5",
+      "title": "Let the Games Begin!",
+      "description": "Competition time! It's optional, but did we mention there's a prize at stake?"
+    }
+  ]
+}

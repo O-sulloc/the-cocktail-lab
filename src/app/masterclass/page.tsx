@@ -1,22 +1,27 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import masterclassData from '@/content/masterclass.json'
+import stepData from '@/content/masterclass-step.json'
 import carAnimation from '@/lottie/car.json'
 import mixAnimation from '@/lottie/mix.json'
 import cocktailAnimation from '@/lottie/cocktail.json'
 import cartAnimation from '@/lottie/cart.json'
 import teamAnimation from '@/lottie/team.json'
 import sessionAnimation from '@/lottie/session.json'
-import Masonry from 'react-masonry-css';
 import 'photoswipe/dist/photoswipe.css';
-import { Gallery, Item } from 'react-photoswipe-gallery';
 import masterclassImages from '@/content/masterclassImages'
 import Button from '@/components/common/Button/Button'
 import ArrowButton from '@/components/common/Button/ArrowButton'
-import Lottie from 'react-lottie-player'
+import HorizontalScrollCards from '@/components/HorizontalScrollCards';
+import WhiteCard from '@/components/WhiteCard';
+import Lottie from 'react-lottie-player';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const cocktails = [
   { name: 'Mojito', image: '/masterclass/masterclass-cocktail-1.jpg', desc: 'A refreshing blend of rum, mint, lime, and soda.' },
@@ -24,69 +29,6 @@ const cocktails = [
   { name: 'Negroni', image: '/masterclass/masterclass-cocktail-3.jpg', desc: 'A classic Italian cocktail with gin, Campari, and vermouth.' },
   { name: 'Espresso Martini', image: '/masterclass/masterclass-cocktail-6.jpg', desc: 'A modern favorite with vodka, coffee liqueur, and espresso.' },
 ];
-
-
-// Types
-// interface CardStep {
-//   id: number
-//   title: string
-//   description: string
-//   color: string
-// }
-
-// Data
-// const cocktailSteps: CardStep[] = [
-//   {
-//     id: 1,
-//     title: "Cocktail Origins",
-//     description: "A brief history on the cocktails of your choice",
-//     color: "#FE4A49"
-//   },
-//   {
-//     id: 2,
-//     title: "Behind the Bar Basics",
-//     description: "Introduction to bar tools + tips and manners behind the bar",
-//     color: "#2AB7CA"
-//   },
-//   {
-//     id: 3,
-//     title: "Live Demo by the Pros",
-//     description: "Watch our mixologists create each cocktail step-by-step so you&apos;re ready to shake it yourself.",
-//     color: "#F86624"
-//   },
-//   {
-//     id: 4,
-//     title: "Your Turn to Shake",
-//     description: "Now it&apos;s your time to shine — every guest will create their own cocktail using premium ingredients and equipment.",
-//     color: "#7E6B8F"
-//   },
-//   {
-//     id: 5,
-//     title: "Let the Games Begin!",
-//     description: "Competition time! It&apos;s optional, but did we mention there&apos;s a prize at stake?",
-//     color: "#4CB944"
-//   }
-// ]
-
-// Card Component
-// const Card = ({ step }: { step: CardStep }) => (
-//   <div 
-//     className="card min-w-full sm:min-w-[350px] md:min-w-[400px] lg:min-w-[500px] xl:min-w-[600px] h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] xl:h-[400px] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between relative transform transition-transform hover:scale-[1.02] mb-6 last:mb-0 md:mb-0 md:mx-8"
-//     style={{ 
-//       backgroundColor: step.color
-//     }}
-//     role="article"
-//     aria-label={`Step ${step.id}: ${step.title}`}
-//   >
-//     <div className="card-content relative z-10">
-//       <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">{step.title}</h3>
-//       <p className="text-base sm:text-lg md:text-xl text-white/90">{step.description}</p>
-//     </div>
-//     <div className="step-number absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white/20">
-//       {String(step.id).padStart(2, '0')}
-//     </div>
-//   </div>
-// )
 
 const lottieMap: { [key: string]: object } = {
   car: carAnimation,
@@ -96,14 +38,8 @@ const lottieMap: { [key: string]: object } = {
   team: teamAnimation,
   session: sessionAnimation,
 }
-export default function Masterclass() {
-  const INITIAL_COUNT = 9;
-  const LOAD_COUNT = 9;
-  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
-  const handleSeeMore = () => {
-    setVisibleCount((prev) => Math.min(prev + LOAD_COUNT, masterclassImages.length));
-  };
+export default function Masterclass() {
 
   return(
     <>
@@ -143,79 +79,67 @@ export default function Masterclass() {
         </p>
         {/* Responsive 6-card grid with Lottie animations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-4">
-          {masterclassData.introduce.map((item, i) => (
-            <motion.div
-              key={i}
-              className="bg-white rounded-[2.5rem] shadow-xl p-8 md:p-12 flex flex-col items-center justify-start min-h-[220px] md:min-h-[260px] lg:min-h-[300px]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+          {masterclassData.introduce.map((item) => (
+            <WhiteCard
+              key={item.title}
+              title={item.title}
+              description={item.desc}
             >
-              <div className="w-24 h-24 mb-6">
-                <Lottie
-                  key={item.title} // 또는 key={i}
-                  animationData={lottieMap[item.image]}
-                  loop={true}
-                  play
-                />
-              </div>
-              <h4 className="text-xl md:text-2xl font-extrabold text-[#184C36] text-center mb-3">{item.title}</h4>
-              <p className="text-black text-center text-base md:text-lg">
-                {item.desc}
-              </p>
-            </motion.div>
+              {lottieMap[item.image] && (
+                <Lottie animationData={lottieMap[item.image]} loop play />
+              )}
+            </WhiteCard>
           ))}
         </div>
       </section>
 
       {/* How It Works Section */}
+      <section className="w-full flex flex-col items-center justify-center py-20">
+        <div className="w-full max-w-6xl mt-12">
+          <HorizontalScrollCards 
+            items={stepData.step.map((item, idx) => ({
+              ...item,
+              animationKey: ['car','mix','cocktail','cart','team','session'][idx % 6],
+            }))}
+            withTitle={true}
+            title="How It Works"
+          />
+        </div>
+      </section>
 
       {/* See in action */}
       <section className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center" style={{ fontFamily: 'Caviar Dreams' }}>
           See Our Masterclass In Action
         </h2>
-        <Gallery>
-          <Masonry
-            breakpointCols={{ default: 3, 1100: 2, 700: 1 }}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            className="w-full"
           >
-            {masterclassImages.slice(0, visibleCount).map((img, idx) => (
-              <div key={idx} className="mb-6">
-                <Item
-                  original={img.original}
-                  thumbnail={img.original}
-                  width="1920"
-                  height="1280"
-                >
-                  {({ ref, open }) => (
-                    <img
-                      ref={ref as unknown as React.MutableRefObject<HTMLImageElement>}
-                      onClick={open}
-                      src={img.original}
-                      alt={img.alt}
-                      className="rounded-lg shadow object-cover w-full cursor-pointer"
-                      style={{ maxWidth: '100%', height: 'auto' }}
-                      loading="lazy"
-                    />
-                  )}
-                </Item>
-              </div>
+            {masterclassImages.map((img, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src={img.original}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+              </SwiperSlide>
             ))}
-          </Masonry>
-        </Gallery>
-        {visibleCount < masterclassImages.length && (
-          <div className="flex justify-center mt-8">
-            <Button 
-              text='See More'
-              onClick={handleSeeMore}
-              variant='secondary'
-              size='sm'
-            />
-          </div>
-        )}
+          </Swiper>
+        </div>
       </section>
 
       {/* Clients Favorite Section */}
