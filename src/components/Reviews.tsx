@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import './Reviews.css';
 import Image from 'next/image';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import reviewsData from '../data/reviews.json';
+import reviewsData from '../content/reviews.json';
 import { ReviewsData } from '../types/reviews';
 
 const Reviews = () => {

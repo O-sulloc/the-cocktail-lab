@@ -1,0 +1,47 @@
+/* Swiper custom navigation and pagination styles (shared globally) */
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  color: white;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+.swiper .swiper-button-prev { left: 0; }
+.swiper .swiper-button-next { right: 0; }
+.swiper .swiper-button-prev:after,
+.swiper .swiper-button-next:after {
+  font-size: 24px;
+  font-weight: bold;
+}
+.swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  margin: 0 5px;
+}
+.swiper .swiper-pagination-bullet-active {
+  background-color: white;
+  width: 24px;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+@media (max-width: 1024px) {
+  .swiper .swiper-button-prev { left: 5px; }
+  .swiper .swiper-button-next { right: 5px; }
+}
+@media (max-width: 640px) {
+  .swiper .swiper-button-prev,
+  .swiper .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+  .swiper .swiper-button-prev:after,
+  .swiper .swiper-button-next:after {
+    font-size: 18px;
+  }
+} 

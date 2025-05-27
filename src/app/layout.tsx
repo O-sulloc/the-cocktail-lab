@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from '../components/layout/Navbar';
 import Banner from '../components/layout/Banner';
 import Footer from '../components/layout/Footer';
+import '../styles/swiper-custom.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
