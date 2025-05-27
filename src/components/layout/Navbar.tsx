@@ -92,8 +92,14 @@ const Navbar = () => {
               <div
                 key={link.name}
                 className="relative group"
-                onMouseEnter={() => link.dropdownItems && setActiveDropdown(link.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => {
+                  console.log('Mouse Enter:', link.name);
+                  link.dropdownItems && setActiveDropdown(link.name);
+                }}
+                onMouseLeave={() => {
+                  console.log('Mouse Leave:', link.name);
+                  setActiveDropdown(null);
+                }}
               >
                 <div className="flex items-center space-x-1 py-2">
                   {link.href ? (
@@ -133,7 +139,7 @@ const Navbar = () => {
                   )}
                 </div>
                 {link.dropdownItems && activeDropdown === link.name && (
-                  <div className="absolute left-0 mt-1 w-64 bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                  <div className="absolute left-0 top-full w-64 bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg p-2">
                     <div className="py-1">
                       {link.dropdownItems.map((item) => (
                         <Link
