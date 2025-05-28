@@ -2,11 +2,9 @@
 
 import barsContent from '@/content/bars.json';
 import type { Bar, SizeSpec } from '@/types/bars';
-import React, { useMemo, useState } from 'react';
-import BarCard from '@/components/BarCard';
+import React, { useState } from 'react';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
-import UnderlineButton from '@/components/common/Button/UnderlineButton';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -18,29 +16,13 @@ import Masonry from 'react-masonry-css';
 import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import ArrowButton from '@/components/common/Button/ArrowButton';
+import RelatedBars from '@/components/RelatedBars';
 
 
 export default function BarDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params);
   
   const bar: Bar | undefined = barsContent.bars.find((b) => b.slug === slug);
-
-  // Helper functions for BarCard props
-  const [activeTooltip, setActiveTooltip] = React.useState<string | null>(null);
-  const isMounted = typeof window !== 'undefined';
-  const isHoverDevice = () => {
-    if (!isMounted) return true;
-    return window.matchMedia('(hover: hover)').matches;
-  };
-  const getTooltipId = (barName: string) => `bar-${barName}`;
-
-  // Related bars: pick 3 random bars (excluding current), but only once per slug
-  const relatedBars = useMemo(() => {
-    return barsContent.bars
-      .filter((b) => b.slug !== slug)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
-  }, [slug]);
 
   // Size Section with cm/inch toggle
   const [unit, setUnit] = useState<'cm' | 'inch'>('cm');
@@ -310,26 +292,7 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
       <FAQ />
 
       {/* Related Products */}
-      {relatedBars.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: 'Caviar Dreams' }}>Related Products</h2>
-            <UnderlineButton href="/bars">View All</UnderlineButton>
-          </div>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-            {relatedBars.map((relatedBar) => (
-              <BarCard
-                key={relatedBar.id}
-                bar={relatedBar}
-                isHoverDevice={isHoverDevice}
-                activeTooltip={activeTooltip}
-                setActiveTooltip={setActiveTooltip}
-                getTooltipId={getTooltipId}
-              />
-            ))}
-          </div>
-        </section>
-      )}
+      <RelatedBars currentSlug={slug} />
     </main>
   );
 }
