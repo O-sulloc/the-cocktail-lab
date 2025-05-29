@@ -2,7 +2,7 @@ import React from 'react';
 
 interface WhiteCardProps {
   title: string;
-  description: string;
+  description?: string;
   className?: string;
   children?: React.ReactNode;
 }
