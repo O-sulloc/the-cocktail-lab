@@ -24,10 +24,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const cocktails = [
-  { name: 'Mojito', image: '/masterclass/masterclass-cocktail-1.jpg', desc: 'A refreshing blend of rum, mint, lime, and soda.' },
-  { name: 'Pina Colada', image: '/masterclass/masterclass-cocktail-2.jpg', desc: 'A tropical mix of rum, coconut, and pineapple.' },
-  { name: 'Negroni', image: '/masterclass/masterclass-cocktail-3.jpg', desc: 'A classic Italian cocktail with gin, Campari, and vermouth.' },
-  { name: 'Espresso Martini', image: '/masterclass/masterclass-cocktail-6.jpg', desc: 'A modern favorite with vodka, coffee liqueur, and espresso.' },
+  { name: 'Mojito', image: '/masterclass/masterclass-cocktail-1.jpg', desc: 'Lorem ipsum dolor sit amet.' },
+  { name: 'Pina Colada', image: '/masterclass/masterclass-cocktail-2.jpg', desc: 'Lorem ipsum dolor sit amet.' },
+  { name: 'Negroni', image: '/masterclass/masterclass-cocktail-3.jpg', desc: 'Lorem ipsum dolor sit amet.' },
+  { name: 'Espresso Martini', image: '/masterclass/masterclass-cocktail-6.jpg', desc: 'Lorem ipsum dolor sit amet.' },
 ];
 
 const lottieMap: { [key: string]: object } = {
@@ -57,11 +57,11 @@ export default function Masterclass() {
         <div className="absolute inset-0 bg-black/60" />
         {/* 텍스트 컨텐츠 */}
         <div className="relative z-10 text-center w-full px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: 'Caviar Dreams' }}>
-            Cocktail Making Classes
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: 'Caviar Dreams' }}>
+            Cocktail Making Class
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto">
-            Group Mixologist Masterclass Hire. We Come to You
+          <p className="text-lg md:text-xl text-gray-300 max-w-xl mx-auto">
+            Group Mixologist Masterclass Hire. <br />We Come to You
           </p>
         </div>
       </section>
@@ -71,10 +71,10 @@ export default function Masterclass() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
           Shake, Stir, and Sip!
         </h2>
-        <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-300">
+        <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-200">
           Learn to Shake It like a Pro!
         </h3>
-        <p className="text-lg text-gray-400 text-center px-4 max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mb-12">
+        <p className="text-base md:text-lg text-gray-300 text-center px-4 max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mb-12">
           Whether you&apos;re planning a team-building activity, a unique celebration, or just a fun get-together with friends, The Cocktail Lab brings the bar to you — turning any occasion into a hands-on, creative, and unforgettable cocktail-making experience that&apos;s perfect for bonding, celebrating, or simply shaking things up.
         </p>
         {/* Responsive 6-card grid with Lottie animations */}
@@ -109,7 +109,7 @@ export default function Masterclass() {
 
       {/* See in action */}
       <section className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center" style={{ fontFamily: 'Caviar Dreams' }}>
+        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-white text-center" style={{ fontFamily: 'Caviar Dreams' }}>
           See Our Masterclass In Action
         </h2>
         <div className="relative">
@@ -148,7 +148,7 @@ export default function Masterclass() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
           Client Favorites
         </h2>
-        <p className="text-lg text-gray-400 text-center px-4 max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mb-8">
+        <p className="text-lg text-gray-300 text-center px-4 max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mb-8">
           At The Cocktail Lab, we believe that the best cocktails are the ones you enjoy the most. Our expert mixologists are here to guide you through the creation of your favorite drinks, from classic concoctions like the Mojito and Pina Coladas to modern marvels like the Espresso Martini and Bramble Cocktails.
         </p>
 
@@ -157,7 +157,7 @@ export default function Masterclass() {
           {cocktails.map((cocktail, idx) => (
             <motion.div
               key={cocktail.name}
-              className={`bg-white rounded-3xl shadow-xl flex items-center p-8 md:p-10 ${idx % 2 === 0 ? 'rotate-1' : '-rotate-1'}`}
+              className={'bg-white rounded-3xl shadow-xl flex items-center p-8 md:p-10'}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
