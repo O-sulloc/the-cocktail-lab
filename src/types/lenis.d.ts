@@ -10,11 +10,19 @@ declare module '@studio-freight/lenis' {
     infinite?: boolean;
   }
 
+  interface LenisScrollEvent {
+    scroll: number;
+    limit: number;
+    velocity: number;
+    direction: number;
+    animate: boolean;
+  }
+
   export default class Lenis {
     constructor(options?: LenisOptions);
     destroy(): void;
-    on(event: string, callback: (e: any) => void): void;
-    off(event: string, callback: (e: any) => void): void;
+    on(event: 'scroll', callback: (e: LenisScrollEvent) => void): void;
+    off(event: 'scroll', callback: (e: LenisScrollEvent) => void): void;
     raf(time: number): void;
     scrollTo(target: number | HTMLElement, options?: { offset?: number; duration?: number; easing?: (t: number) => number }): void;
     stop(): void;

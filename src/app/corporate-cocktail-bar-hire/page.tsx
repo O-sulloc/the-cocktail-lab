@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
@@ -20,8 +20,6 @@ import { motion } from "framer-motion";
 import UnderlineButton from "@/components/common/Button/UnderlineButton";
 
 const Corporate = () => {
-  const sectionRef = useRef(null);
-
   const features = [
     {
       title: "Delicious Cocktails",
@@ -118,7 +116,7 @@ const Corporate = () => {
             start: 'top 20%',
             end: 'top 00%',
             scrub: true,
-            markers: true,
+            markers: false,
             toggleActions: 'play play reverse reverse',
             pin: true,
           },
@@ -195,11 +193,11 @@ const Corporate = () => {
       
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-6 min-h-screen">
         <p 
-          className="reveal-type text-2xl md:text-4xl lg:text-6xl font-bold text-center"
+          className="reveal-type text-2xl md:text-3xl lg:text-5xl font-bold text-center"
           data-bg-color="#000000"
           data-fg-color="#cccccc"
         >
-          Bring something different to your next corporate event. Whether you want to create an evening to relax and socialise amongst colleagues with our corporate bar hire as our talented mixologists engage and entertain or you want to add some dynamite with a flair mixologist, we'll see to it all whilst mixing and muddling your chosen cocktails to perfection.
+          Bring something different to your next corporate event. Whether you want to create an evening to relax and socialise amongst colleagues with our corporate bar hire as our talented mixologists engage and entertain or you want to add some dynamite with a flair mixologist, we&apos;ll see to it all whilst mixing and muddling your chosen cocktails to perfection.
         </p>
       </section>
 
@@ -209,7 +207,7 @@ const Corporate = () => {
           Our Services
         </h2>
         <div className="flex flex-col md:flex-row md:justify-center gap-8">
-          {services.map((service, idx) => (
+          {services.map((service) => (
             <div
               key={service.title}
               className="bg-white rounded-[40px] shadow-lg flex-1 max-w-md flex flex-col overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl duration-300"
