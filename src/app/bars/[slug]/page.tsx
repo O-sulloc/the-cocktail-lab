@@ -1,5 +1,6 @@
 'use client';
 
+import Hero from '@/components/layout/Hero';
 import barsContent from '@/content/bars.json';
 import type { Bar, SizeSpec } from '@/types/bars';
 import React, { useState } from 'react';
@@ -32,29 +33,10 @@ export default function BarDetailPage({ params }: { params: Promise<{ slug: stri
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[60vh] flex items-center justify-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src={bar.image}
-            alt={bar.alt}
-            fill
-            className="object-cover object-center"
-            style={{ maxHeight: '600px' }}
-            priority
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center text-center text-white px-4">
-          {/* 로고/아이콘 등 필요시 추가 */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-2 drop-shadow-lg" style={{ fontFamily: 'Caviar Dreams' }}>
-            {bar.name}
-          </h1>
-        </div>
-      </section>
+      <Hero
+        title={bar.name}
+        backgroundImage={bar.image}
+      />
 
       {/* About + 이미지 슬라이더 좌우 배치 */}
       <section className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row gap-12">
