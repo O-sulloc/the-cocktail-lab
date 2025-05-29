@@ -1,5 +1,6 @@
 'use client';
 
+import Hero from "@/components/layout/Hero";
 import Image from "next/image";
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -133,24 +134,11 @@ const Corporate = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
-        <Image
-          src="/exhibition-the-cocktail-lab-img-2-1.jpeg"
-          alt="Cocktail Lab Masterclass Hero"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center w-full px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: 'Caviar Dreams' }}>
-            Corporate Events
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto">
-            Corporate Bar Hire & Mixologist Hire
-          </p>
-        </div>
-      </section>
+      <Hero
+        title="Corporate Events"
+        subtitle="Corporate Bar Hire & Mixologist Hire"
+        backgroundImage="/exhibition-the-cocktail-lab-img-2-1.jpeg"
+      />
 
       {/* type animation section */}
       <section className="flex items-center justify-center my-20 md:my-40">

@@ -1,5 +1,6 @@
 'use client'
 
+import Hero from '@/components/layout/Hero';
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import masterclassData from '@/content/masterclass.json'
@@ -10,11 +11,17 @@ import cocktailAnimation from '@/lottie/cocktail.json'
 import cartAnimation from '@/lottie/cart.json'
 import teamAnimation from '@/lottie/team.json'
 import sessionAnimation from '@/lottie/session.json'
+import cheersAnimation from '@/lottie/cheers.json'
+import liquorAnimation from '@/lottie/liquor.json'
+import questionAnimation from '@/lottie/question.json'
+import yellowCocktailAnimation from '@/lottie/yellow-cocktail.json'
+import trophyAnimation from '@/lottie/trophy.json'
 import 'photoswipe/dist/photoswipe.css';
 import masterclassImages from '@/content/masterclassImages'
 import Button from '@/components/common/Button/Button'
 import ArrowButton from '@/components/common/Button/ArrowButton'
-import HorizontalScrollCards from '@/components/HorizontalScrollCards';
+import DesktopHorizontalScrollCards from '@/components/DesktopHorizontalScrollCards';
+import MobileVerticalCards from '@/components/MobileVerticalCards';
 import WhiteCard from '@/components/WhiteCard';
 import Lottie from 'react-lottie-player';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,6 +29,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Reviews from '@/components/Reviews';
 
 const cocktails = [
   { name: 'Mojito', image: '/masterclass/masterclass-cocktail-1.jpg', desc: 'Lorem ipsum dolor sit amet.' },
@@ -37,34 +45,22 @@ const lottieMap: { [key: string]: object } = {
   cart: cartAnimation,
   team: teamAnimation,
   session: sessionAnimation,
+  cheers: cheersAnimation,
+  liquor: liquorAnimation,
+  question: questionAnimation,
+  yellowCocktail: yellowCocktailAnimation,
+  trophy: trophyAnimation,
 }
 
 export default function Masterclass() {
 
   return(
     <>
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
-        {/* 배경 이미지 */}
-        <Image
-          src="/masterclass/the-cocktail-lab-masterclass-in-action-5.jpg"
-          alt="Cocktail Lab Masterclass Hero"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* 어두운 오버레이 */}
-        <div className="absolute inset-0 bg-black/60" />
-        {/* 텍스트 컨텐츠 */}
-        <div className="relative z-10 text-center w-full px-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: 'Caviar Dreams' }}>
-            Cocktail Making Class
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-xl mx-auto">
-            Group Mixologist Masterclass Hire. <br />We Come to You
-          </p>
-        </div>
-      </section>
+      <Hero
+        title="Cocktail Making Class"
+        subtitle="Group Mixologist Masterclass Hire. We Come to You"
+        backgroundImage="/masterclass/the-cocktail-lab-masterclass-in-action-5.jpg"
+      />
 
       {/* Masterclass Introduction Section */}
       <section className="w-full flex flex-col items-center justify-center py-20">
@@ -96,13 +92,23 @@ export default function Masterclass() {
       {/* How It Works Section */}
       <section className="w-full flex flex-col items-center justify-center py-20">
         <div className="w-full max-w-6xl mt-12">
-          <HorizontalScrollCards 
+          <DesktopHorizontalScrollCards 
             items={stepData.step.map((item, idx) => ({
               ...item,
-              animationKey: ['car','mix','cocktail','cart','team','session'][idx % 6],
+              animationKey: ['question','yellowCocktail','liquor','cheers','trophy'][idx % 6],
             }))}
             withTitle={true}
             title="How It Works"
+            lottieMap={lottieMap}
+          />
+          <MobileVerticalCards
+            items={stepData.step.map((item, idx) => ({
+              ...item,
+              animationKey: ['question','yellowCocktail','liquor','cheers','trophy'][idx % 6],
+            }))}
+            withTitle={true}
+            title="How It Works"
+            lottieMap={lottieMap}
           />
         </div>
       </section>
@@ -208,6 +214,8 @@ export default function Masterclass() {
           />
         </div>
       </section>
+
+      <Reviews />
     </>
   )
 }

@@ -2,32 +2,19 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WhiteCard from './WhiteCard';
-
-// 카드 아이템 타입 정의
-export type HorizontalScrollCardItem = {
-  id: string;
-  title: string;
-  description: string;
-};
-
-interface HorizontalScrollCardsProps {
-  items: HorizontalScrollCardItem[];
-  className?: string;
-  cardWidth?: number | string; // px, %, rem 등
-  height?: number | string; // px, %, rem 등
-  withTitle?: boolean;
-  title?: string;
-}
+import Lottie from 'react-lottie-player';
+import { DesktopCardsProps } from '@/types/cards';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({
+const DesktopHorizontalScrollCards: React.FC<DesktopCardsProps> = ({
   items,
   className = '',
   cardWidth = 340,
   height = '500px',
   withTitle = false,
   title,
+  lottieMap,
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -61,7 +48,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({
   return (
     <section
       ref={wrapRef}
-      className={`horizontal-scroll-wrap w-full overflow-hidden ${className}`}
+      className={`horizontal-scroll-wrap w-full overflow-hidden hidden md:block ${className}`}
       style={{ height }}
     >
       {withTitle && title && (
@@ -76,7 +63,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({
         className="horizontal-scroll-track flex h-full gap-8 px-8"
         style={{ width: `calc(${items.length} * ${typeof cardWidth === 'number' ? cardWidth + 'px' : cardWidth})` }}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <div
             key={item.id}
             className="horizontal-scroll-card flex-shrink-0"
@@ -86,7 +73,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({
               title={item.title}
               description={item.description}
             >
-              <span className="text-3xl md:text-4xl font-bold text-emerald-600">{String(idx + 1).padStart(2, '0')}</span>
+              <Lottie animationData={lottieMap[item.animationKey]} loop play /> 
             </WhiteCard>
           </div>
         ))}
@@ -95,4 +82,4 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({
   );
 };
 
-export default HorizontalScrollCards; 
+export default DesktopHorizontalScrollCards; 
