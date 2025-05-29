@@ -55,7 +55,7 @@ const Bars = () => {
     
     cloneItems();
     
-    const speed = 1.5;
+    const speed = 1.0;
     
     const animate = () => {
       if (isPaused) {
@@ -94,37 +94,37 @@ const Bars = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" style={{ fontFamily: 'Caviar Dreams' }}>
           Our Mobile Bars
         </h2>
-        
-        <div className="relative overflow-visible py-4">
-          <div 
-            ref={containerRef}
-            className="flex transition-none" 
-            style={{ willChange: 'transform' }}
-          >
-            {bars.map((bar, index) => (
-              <Link 
-                href={`/bars/${bar.slug}`}
-                key={`${bar.id}-${index}`}
-                className="relative w-[200px] h-[280px] md:w-[300px] md:h-[400px] flex-shrink-0 mr-4 md:mr-8 carousel-item group pt-4"
-              >
-                <div className="absolute inset-0 top-4 rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 ease-out transform group-hover:-translate-y-8 group-hover:scale-110 group-hover:z-20 group-hover:shadow-[0_35px_35px_-15px_rgba(0,0,0,0.7)]">
-                  <Image
-                    src={bar.thumb}
-                    alt={bar.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 200px, 300px"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                      <p className="text-white text-center font-semibold text-xl mb-2">{bar.name}</p>
-                      <p className="text-white/80 text-center text-sm">View Details</p>
-                    </div>
+      </div>
+      {/* Bar card row: full width */}
+      <div className="relative overflow-visible py-4 w-full">
+        <div 
+          ref={containerRef}
+          className="flex transition-none w-full px-4 sm:px-6 lg:px-8" 
+          style={{ willChange: 'transform' }}
+        >
+          {bars.map((bar, index) => (
+            <Link 
+              href={`/bars/${bar.slug}`}
+              key={`${bar.id}-${index}`}
+              className="relative w-[200px] h-[280px] md:w-[300px] md:h-[400px] flex-shrink-0 mr-4 md:mr-8 carousel-item group pt-4"
+            >
+              <div className="absolute inset-0 top-4 rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 ease-out transform group-hover:-translate-y-8 group-hover:scale-110 group-hover:z-20 group-hover:shadow-[0_35px_35px_-15px_rgba(0,0,0,0.7)]">
+                <Image
+                  src={bar.thumb}
+                  alt={bar.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 200px, 300px"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-white text-center font-semibold text-xl mb-2">{bar.name}</p>
+                    <p className="text-white/80 text-center text-sm">View Details</p>
                   </div>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

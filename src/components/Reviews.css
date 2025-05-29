@@ -172,3 +172,11 @@
     max-height: 250px;
   }
 }
+
+/* Swiper grab cursor for drag interaction */
+.swiper {
+  cursor: grab;
+}
+.swiper:active {
+  cursor: grabbing;
+}
