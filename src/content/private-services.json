@@ -1,0 +1,123 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "slug": "wedding-party",
+      "title": "Wedding Party",
+      "thumb": "/private/wedding/private-wedding-bar-hire-1.jpg",
+      "thumb_alt": "Wedding Cocktail Bar Hire The Cocktail Lab",
+      "subtitle": "Create Your Dream Day",
+      "description": "Congratulations! As you make plans for one of the most important days of your life, we aim to help achieve your ideas, to create an unforgettable day for your family, guests and most importantly you and your partner. Our bespoke Wedding Cocktail Bar Hire services allow us to tailor to your needs and budget.",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg",
+        "/private/wedding/private-wedding-bar-hire-3.jpg",
+        "/private/wedding/private-wedding-bar-hire-4.jpg",
+        "/private/wedding/private-wedding-bar-hire-5.jpg",
+        "/private/wedding/private-wedding-bar-hire-6.jpg",
+        "/private/wedding/private-wedding-bar-hire-7.jpg",
+        "/private/wedding/private-wedding-bar-hire-8.jpg",
+        "/private/wedding/private-wedding-bar-hire-9.jpg",
+        "/private/wedding/private-wedding-bar-hire-10.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "birthday-party",
+      "title": "Birthday Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "thumb_alt": "Birthday Party Cocktail Bar Hire The Cocktail Lab",
+      "subtitle": "Celebrate in Style",
+      "description": "Ready to add something a little different to your birthday celebrations this year? Birthday Party Cocktail Bar Hire, The Cocktail Lab are here to help you organise and take the stress out of your special day so you can relax and enjoy just like the guest of honour should. Together we can tie in your cocktails to your chosen theme and give your party the flair it deserves.",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "baby-shower-party",
+      "title": "Baby Shower Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "Hello Baby!",
+      "description": "Whether you’re hosting a baby shower, or a gender reveal party The Cocktail Lab is at hand to make sure that you and your guests celebrate the imminent new arrival in the best way possible. Our bespoke Baby Shower Cocktail Bar Hire services allow you to decide what suits your requirements, whether it’s a cocktail & mocktail mixed bar or coloured pink & blue drinks, however you choose to celebrate we’ll provide a professional and friendly service.",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "house-party",
+      "title": "House Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "The Party’s Over Here... House Party Cocktail Bar Hire",
+      "description": "Whatever the reason, and there’s always one, parties at home can range from small and intimate to larger scale events. Either way they are inevitably stressful for you, the host. At The Cocktail Lab we want to help relieve that pressure, our dedicated team are here to help advise you and answer any questions whilst our mixologists will make sure you and your guests enjoy your House Party Cocktail Bar Hire as well as the delicious cocktails.",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "christmas-party",
+      "title": "Christmas Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "Tis the Season to be Jolly",
+      "description": "Delight your guests with a White Christmas Colada or a Gingerbread Margarita or get in the festive spirit whilst sipping a Let it Sloe amongst family and friends. Take your Christmas party to the next level with Christmas Party Cocktail Bar Hire from The Cocktail Lab.",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "halloween-party",
+      "title": "Halloween Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "Chilling Cocktails & Frightening Fun",
+      "description": "Add a bit of afterlife to your Halloween Party Cocktail Bar Hire with a mobile bar from The Cocktail Lab. Bringing you spooktacular cocktail concoctions, we’ll leave you to stir the cauldron whilst we stir up a perfect cocktail menu for your party. Whether you take a stab at the Witch’s Eye Martini or try the drop dead gorgeous Screaming Banana, The Cocktail Lab will have you howling.",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "science-party",
+      "title": "Science Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "Absinthe-Minded Scientists",
+      "description": "The Cocktail Periodic Table Bar – Custom branded with cocktail elements / Dry Ice Display – Smoky effects for a science experiment gone delightfully right / Molecular Cocktails – Your favourite cocktails with a creative twist / Mixology Scientists – Professional Mixologists in Lab Coats and Goggles for a fully immersive experience",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "40th-birthday-party",
+      "title": "40th Birthday Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "Celebrate Your 40th in Style",
+      "description": "Turning 40 is a milestone that deserves an unforgettable celebration, and The Cocktail Lab is here to make it truly spectacular! Our 40th Birthday Party Cocktail Bar Hire service brings sophistication, creativity, and a touch of luxury to your birthday bash. Whether you’re hosting an elegant soirée or a lively party with friends and family, our expert mixologists will craft exquisite, hand-crafted cocktails tailored to your taste. So sit back, sip, and celebrate your 40th birthday party while we shake, stir, and serve up an unforgettable night. Raise a glass to 40 fabulous years—cheers!",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "50th-birthday-party",
+      "title": "50th Birthday Party",
+      "thumb": "/choose-the-cocktail-lab-3.jpg",
+      "subtitle": "Celebrate 50 Incredible Years",
+      "description": "A 50th birthday is a milestone that deserves an unforgettable celebration, and The Cocktail Lab is here to make it extraordinary! Our 50th Birthday Party Cocktail Bar Hire service brings a touch of elegance, excitement, and top-tier mixology to your special event. Whether you’re planning an intimate gathering or a grand party, our expert bartenders will craft delicious, handcrafted cocktails tailored to your tastes. So, raise a glass to 50 incredible years, surrounded by great company and world-class cocktails—cheers to you!",
+      "action_images": [
+        "/private/wedding/private-wedding-bar-hire-1.jpg",
+        "/private/wedding/private-wedding-bar-hire-2.jpg"
+      ]
+    }
+  ]
+}
+
