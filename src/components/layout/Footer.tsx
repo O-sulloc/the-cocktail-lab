@@ -20,8 +20,8 @@ const navLinks = [
   { 
     name: 'Bar Hire', 
     dropdownItems: [
-      { name: 'For Private Events', href: '#' },
-      { name: 'For Corporate Events', href: '#' },
+      { name: 'For Private Events', href: '/private-cocktail-bar-hire' },
+      { name: 'For Corporate Events', href: '/corporate-cocktail-bar-hire' },
     ]
   },
   { name: 'Masterclass', href: '#' },
