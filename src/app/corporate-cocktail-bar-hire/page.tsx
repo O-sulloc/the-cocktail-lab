@@ -4,9 +4,6 @@ import Hero from "@/components/layout/Hero";
 import Image from "next/image";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from "split-type";
-import Lenis from "lenis";
 import Brands from "@/components/Brands";
 import FAQ from "@/components/FAQ";
 import RelatedBars from "@/components/RelatedBars";
@@ -19,6 +16,9 @@ import reply from "@/lottie/reply.json";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import UnderlineButton from "@/components/common/Button/UnderlineButton";
+import Reviews from "@/components/Reviews";
+import ArrowButton from "@/components/common/Button/ArrowButton";
+import SplitText from "gsap/SplitText";
 
 const Corporate = () => {
   const features = [
@@ -80,56 +80,18 @@ const Corporate = () => {
   ]
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(SplitText) 
 
-    // Initialize Lenis for smooth scrolling
-    const lenis = new Lenis();
+    // split elements with the class "split" into words and characters
+    const split = SplitText.create(".split", { type: "words" });
 
-    lenis.on('scroll', ScrollTrigger.update);
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Text reveal animation
-    const splitTypes = document.querySelectorAll('.reveal-type');
-
-    splitTypes.forEach((char) => {
-      const bg = char.getAttribute('data-bg-color') || '#cccccc';
-      const fg = char.getAttribute('data-fg-color') || '#000000';
-
-      const text = new SplitType(char as HTMLElement, { types: 'words' });
-
-      gsap.fromTo(
-        text.words,
-        {
-          color: bg,
-        },
-        {
-          color: fg,
-          duration: 0.3,
-          stagger: 0.02,
-          scrollTrigger: {
-            trigger: char,
-            start: 'top 20%',
-            end: 'top 00%',
-            scrub: true,
-            markers: false,
-            toggleActions: 'play play reverse reverse',
-            pin: true,
-          },
-        }
-      );
+    // now animate the characters in a staggered fashion
+    gsap.from(split.words, {
+      duration: 1, 
+      y: 100,       // animate from 100px below
+      autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+      stagger: 0.05 // 0.05 seconds between each
     });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      lenis.destroy();
-    };
   }, []);
 
   return (
@@ -154,6 +116,8 @@ const Corporate = () => {
             1000,
             'Perfect for exhibitions',
             1000,
+            'Perfect for every occasion',
+            1000,
           ]}
           wrapper="span"
           speed={50}
@@ -167,23 +131,29 @@ const Corporate = () => {
       <section className="">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {features.map((item) => (
-              <WhiteCard
+            {features.map((item, index) => (
+              <motion.div
                 key={item.title}
-                title={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: (index + 2) * 0.2 }}
               >
-                <Lottie animationData={item.lottie} loop play />
-              </WhiteCard>
+                <WhiteCard
+                  key={item.title}
+                  title={item.title}
+                >
+                  <Lottie animationData={item.lottie} loop play />
+                </WhiteCard>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
       
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-6 min-h-screen">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-x-6 my-20 md:my-40">
         <p 
-          className="reveal-type text-2xl md:text-3xl lg:text-5xl font-bold text-center"
-          data-bg-color="#000000"
-          data-fg-color="#cccccc"
+          className="split text-2xl md:text-3xl lg:text-5xl font-bold text-center text-white"
+          style={{ lineHeight: '1.3' }}
         >
           Bring something different to your next corporate event. Whether you want to create an evening to relax and socialise amongst colleagues with our corporate bar hire as our talented mixologists engage and entertain or you want to add some dynamite with a flair mixologist, we&apos;ll see to it all whilst mixing and muddling your chosen cocktails to perfection.
         </p>
@@ -195,9 +165,12 @@ const Corporate = () => {
           Our Services
         </h2>
         <div className="flex flex-col md:flex-row md:justify-center gap-8">
-          {services.map((service) => (
-            <div
+          {services.map((service, index) => (
+            <motion.div
               key={service.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (index + 2) * 0.2 }}
               className="bg-white rounded-[40px] shadow-lg flex-1 max-w-md flex flex-col overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl duration-300"
               style={{ minWidth: 0 }}
             >
@@ -217,7 +190,7 @@ const Corporate = () => {
                 <p className="text-gray-700 text-lg mb-4 flex-1">{service.desc}</p>
                 <UnderlineButton href={service.href}>Read more</UnderlineButton>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -231,9 +204,12 @@ const Corporate = () => {
           Keep the fun going on a regular basis, join our new loyalty programme and receive fantastic discounts against block bookings. <br /> Make the most of your time and money!
         </p>
         <div className="flex flex-col md:flex-row md:justify-between md:gap-8 gap-6">
-          {loyalty.map((c, idx) => (
-            <div
+          {loyalty.map((c, index) => (
+            <motion.div
               key={c.percent}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (index + 2) * 0.2 }}
               className="relative bg-white rounded-2xl shadow-xl flex flex-row items-center p-8 md:p-10 w-full md:w-[31%]"
             >
               {/* 왼쪽 오목 효과 */}
@@ -262,7 +238,7 @@ const Corporate = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.2 + 0.1 * idx }}
+                  transition={{ duration: 0.7, delay: 0.2 + 0.1 * index }}
                 >
                   {c.percent}
                 </motion.h3>
@@ -271,15 +247,25 @@ const Corporate = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.3 + 0.1 * idx }}
+                  transition={{ duration: 0.7, delay: 0.3 + 0.1 * index }}
                 >
                   {c.desc}
                 </motion.p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        <div className="flex justify-center">
+          <ArrowButton
+            text="Get a quote"
+            href="/contact"
+            className="mt-10"
+          />
+        </div>
       </section>
+
+      <Reviews />
 
       <Brands />
 
