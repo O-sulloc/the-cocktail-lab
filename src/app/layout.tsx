@@ -5,6 +5,7 @@ import Navbar from '../components/layout/Navbar';
 import Banner from '../components/layout/Banner';
 import Footer from '../components/layout/Footer';
 import '../styles/swiper-custom.css';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,6 +81,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
