@@ -9,7 +9,7 @@ const navLinks = [
   { 
     name: 'About', 
     dropdownItems: [
-      { name: 'Why Us', href: '#' },
+      { name: 'Why Us', href: '/why-us' },
       { name: 'Newsroom', href: '#' },
       { name: 'Gallery', href: '#' },
       { name: 'Sustainability', href: '#' },
@@ -24,7 +24,7 @@ const navLinks = [
       { name: 'For Corporate Events', href: '/corporate-cocktail-bar-hire' },
     ]
   },
-  { name: 'Masterclass', href: '#' },
+  { name: 'Masterclass', href: '/masterclass' },
   { name: 'Our Bars', href: '/bars' },
   { 
     name: 'Testimonial', 

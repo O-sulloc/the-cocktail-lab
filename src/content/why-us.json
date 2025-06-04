@@ -1,0 +1,85 @@
+{
+  "customerExperience": {
+    "title": "Seamless Customer Experience",
+    "features": [
+      {
+        "title": "Fast, Friendly Support",
+        "description": "From your first enquiry to event day, our dedicated team responds quickly and clearly to keep everything stress-free.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      },
+      {
+        "title": "Flexible Scheduling",
+        "description": "Need to tweak the start time or swap a cocktail last-minute? We've got you — just let us know up to 48 hours before.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      },
+      {
+        "title": "Stress-Free Setup",
+        "description": "Fast & efficient service, we endeavour to have enough staff at your event to prevent long queues, our team will arrive early to prep providing a smooth service.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      },
+      {
+        "title": "Reliable Vendor Help",
+        "description": "Need catering, DJs or a photographer? We've got a reliable network to complete your event, just ask!",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      }
+    ]
+  },
+  "team": {
+    "title": "Professional & Personable Team",
+    "features": [
+      {
+        "title": "Top-Tier Mixologists",
+        "description": "Trained in London's best bars, restaurants and clubs, our pros bring both skill and showmanship to your event.",
+        "image": "/choose-the-cocktail-lab-1.jpg"
+      },
+      {
+        "title": "Always Friendly, Always Ready",
+        "description": "A friendly dedicated team with a positive attitude, always ready to serve your guests & ensure that each visit to the bar is as enjoyable as the last.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      }
+    ]
+  },
+  "customExperience": {
+    "title": "Custom Cocktails & Themed Experience",
+    "features": [
+      {
+        "title": "Free Tasting, Full Confidence",
+        "description": "Book our full package and enjoy a complimentary tasting session — perfect your drinks before the big day.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      },
+      {
+        "title": "Tailored Menus, Your Way",
+        "description": "Choose your cocktails, your vibe, and even your start time — we adapt to your event, not the other way around.",
+        "image": "/choose-the-cocktail-lab-3.jpg" 
+      },
+      {
+        "title": "Delicious, Photo-Worthy Drinks",
+        "description": "Every cocktail is crafted with premium liquor and garnishes — because it should taste as good as it looks.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      },
+      {
+        "title": "Add a Theme. Or a Logo. Or Both!",
+        "description": "Add your brand colours, event theme, or even edible logos. From Christmas to Halloween, we help you make it yours.",
+        "image": "/choose-the-cocktail-lab-3.jpg"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "title": "20+ Years",
+      "description": "In Mixology"
+    },
+    {
+      "title": "200+",
+      "description": "5 Star Reviews"
+    },
+    {
+      "title": "3,000+",
+      "description": "Events Delivered"
+    },
+    {
+      "title": "1,500+",
+      "description": "Masterclass Participants"
+    }
+  ]
+}

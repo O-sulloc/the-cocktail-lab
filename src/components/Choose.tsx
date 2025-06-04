@@ -159,7 +159,7 @@ const Choose = () => {
       <div className="flex justify-center mt-20">
       <Button 
         text='Learn More'
-        href=''
+        href='/why-us'
         variant='secondary'
         size='sm'
       />

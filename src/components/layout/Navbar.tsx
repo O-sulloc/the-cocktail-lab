@@ -24,7 +24,7 @@ const Navbar = () => {
     { 
       name: 'About', 
       dropdownItems: [
-        { name: 'Why Us', href: '#' },
+        { name: 'Why Us', href: '/why-us' },
         { name: 'Newsroom', href: '#' },
         { name: 'Gallery', href: '#' },
       ]
