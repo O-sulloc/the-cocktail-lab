@@ -1,0 +1,34 @@
+{
+  "classes": [
+    {
+      "title": "Dynamic Masterclass",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "image": "/cocktail-making.jpeg",
+      "features": {
+        "A": true,
+        "B": true,
+        "C": true
+      }
+    },
+    {
+      "title": "Sit Down Masterclass",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "image": "/cocktail-making.jpeg",
+      "features": {
+        "A": true,
+        "B": false,
+        "C": false
+      }
+    },
+    {
+      "title": "In House Masterclass",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "image": "/cocktail-making.jpeg",
+      "features": {
+        "A": true,
+        "B": false,
+        "C": false
+      }
+    }
+  ]
+}

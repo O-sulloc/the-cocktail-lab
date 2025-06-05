@@ -30,6 +30,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Reviews from '@/components/Reviews';
+import ExpandableCard from '@/components/ExpandableCard';
+import Class from '@/content/masterclass-classes.json'
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import SpinButton from '@/components/common/Button/SpinButton'
 
 const cocktails = [
   { name: 'Mojito', image: '/masterclass/masterclass-cocktail-1.jpg', desc: 'Lorem ipsum dolor sit amet.' },
@@ -51,6 +56,12 @@ const lottieMap: { [key: string]: object } = {
   yellowCocktail: yellowCocktailAnimation,
   trophy: trophyAnimation,
 }
+
+const checklistLabels = [
+  { key: "A", label: "Lorem ipsum dolor sit amet." },
+  { key: "B", label: "Lorem ipsum dolor sit amet." },
+  { key: "C", label: "Lorem ipsum dolor sit amet." },
+];
 
 export default function Masterclass() {
 
@@ -87,7 +98,52 @@ export default function Masterclass() {
             </WhiteCard>
           ))}
         </div>
+        <div className="mt-20">
+          <ArrowButton
+            text='Book Masterclass'
+            href=''
+          />
+        </div>
       </section>
+
+      <section className="w-full flex flex-col items-center justify-center py-20">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white" style={{ fontFamily: 'Caviar Dreams' }}>
+          Our Masterclasses
+        </h2>
+        <div className="w-full max-w-6xl flex flex-col items-center gap-6 my-20 grid grid-cols-1 md:grid-cols-3 px-4">
+          {Class.classes.map((item) => (
+            <ExpandableCard 
+              key={item.title} 
+              title={item.title} 
+              image={item.image} 
+              desc={item.desc}
+            >
+              <div className="mt-8">
+                <ul className="space-y-1">
+                  {checklistLabels.map(({ key, label }) => (
+                    <li key={key} className="flex items-center text-gray-800 text-sm">
+                      <span>{label}</span>
+                      {item.features?.[key as keyof typeof item.features] ? (
+                        <IoIosCheckmarkCircleOutline className="text-green-600 w-6 h-6 ml-2" />
+                      ) : (
+                        <IoIosCloseCircleOutline className="text-red-600 w-6 h-6 ml-2" />
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex justify-center mt-8">
+                <SpinButton
+                  text='Book Masterclass'
+                  href=''
+                />
+              </div>
+            </ExpandableCard>
+          ))}
+        </div>
+      </section>
+
 
       {/* How It Works Section */}
       <section className="w-full flex flex-col items-center justify-center py-20">
@@ -109,6 +165,12 @@ export default function Masterclass() {
             withTitle={true}
             title="How It Works"
             lottieMap={lottieMap}
+          />
+        </div>
+        <div className="flex justify-center gap-4 mt-20">
+          <ArrowButton
+            text='Book Masterclass'
+            href=''
           />
         </div>
       </section>
@@ -180,7 +242,7 @@ export default function Masterclass() {
               </div>
               <div>
                 <motion.h3
-                  className="text-2xl md:text-3xl font-bold text-gray-900 mb-2"
+                  className="text-xl md:text-3xl font-bold text-gray-900 mb-2"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -189,7 +251,7 @@ export default function Masterclass() {
                   {cocktail.name}
                 </motion.h3>
                 <motion.p
-                  className="text-gray-600 text-lg"
+                  className="text-gray-600 text-base md:text-lg"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
