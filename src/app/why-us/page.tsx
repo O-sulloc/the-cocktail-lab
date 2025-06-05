@@ -136,12 +136,18 @@ const WhyUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           {whyUs.customerExperience.features.map((feature, idx) => (
-            <ImageCard
+            <motion.div
               key={idx}
-              image={feature.image}
-              title={feature.title}
-              description={feature.description}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <ImageCard
+                image={feature.image}
+                title={feature.title}
+                description={feature.description}
+              />
+            </motion.div>
           ))}
         </div>
       </div>
@@ -167,12 +173,18 @@ const WhyUs = () => {
         {/* 2-column grid for ImageCards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           {whyUs.team.features.map((feature, idx) => (
-            <ImageCard
+            <motion.div
               key={idx}
-              image={feature.image}
-              title={feature.title}
-              description={feature.description}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <ImageCard
+                image={feature.image}
+                title={feature.title}
+                description={feature.description}
+              />
+            </motion.div>
           ))}
         </div>
       </div>
@@ -197,12 +209,18 @@ const WhyUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           {whyUs.customExperience.features.map((feature, idx) => (
-            <ImageCard
+            <motion.div
               key={idx}
-              image={feature.image}
-              title={feature.title}
-              description={feature.description}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <ImageCard
+                image={feature.image}
+                title={feature.title}
+                description={feature.description}
+              />
+            </motion.div>
           ))}
         </div>
       </div>
